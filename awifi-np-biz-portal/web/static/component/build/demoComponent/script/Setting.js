@@ -1,0 +1,1 @@
+var _Setting_=function(entity,divId){var setting=null;function setStates(state){entity.setState(state);setting.setState(state)}return{setStates:setStates,render:function(){console.log("设置组件entity=>",entity);setting=React.render(React.createElement(SettingReact,null),document.getElementById(divId));console.log("设置组件setting = React.render => ",setting);return setting}}};

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn" data-ng-app="indexApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>爱WiFi行业客户Portal平台</title>
+    <link rel="stylesheet" type="text/css" href="css/awifi_portal_lib.min.css?v=@release">
+    <link rel="stylesheet" type="text/css" href="css/awifi_portal.min.css?v=@release">
+</head>
+<body>
+<div class="nav on" data-ng-controller="leftMenuController">
+    <div class="on-off"><div class="min"></div></div>
+    <div class="nav-item icon-siteTemplate branch">
+        <a href="javascript:void(0);" class="nav-title" title="模板管理"><i class="icon"></i><span>模板管理</span></a>
+        <ul>
+            <li><a href="#/template/list"><span>模板列表</span></a>
+        </ul>
+    </div>
+    <div class="nav-item icon-page branch">
+        <a href="javascript:void(0);" class="nav-title" title="站点管理"><i class="icon"></i><span>站点管理</span></a>
+        <ul>
+            <li><a href="#/site/defaultSiteList"><span>默认站点</span></a>
+            <li><a href="#/site/list"><span>站点列表</span></a>
+        </ul>
+    </div>
+    <div class="nav-item icon-strategy branch">
+        <a href="javascript:void(0);" class="nav-title" title="组件管理"><i class="icon"></i><span>组件管理</span></a>
+        <ul>
+            <li><a href="#/component/list"><span>组件列表</span></a>
+        </ul>
+    </div>
+    <div class="nav-item icon-log branch">
+        <a href="javascript:void(0);" class="nav-title" title="日志管理"><i class="icon"></i><span>日志管理</span></a>
+        <ul>
+            <li><a href="#/sysconfig/list"><span>系统参数配置</span></a></li>
+            <li><a href="#/exceptionlog/list"><span>异常日志</span></a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="header">
+    <div class="header-left-text">爱WiFi行业客户Portal平台</div>
+    <div class="header-right" data-ng-controller="topMenuController">
+        <div class="header-icon-border">
+            <img src="images/akamaru.jpg"/>
+        </div>
+        <div class="header-user" data-ng-bind="userName"></div>
+        <div class="header-profile">
+            <ul>
+                <li><a class="icon-power" href="/logout">退出系统</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-layout">
+    <div class="bodycontentright" data-ng-view=""></div>
+</div>
+<script type="text/javascript" src="js/awifi_portal_lib.min.js?v=@release"></script>
+<script type="text/javascript" src="js/awifi_portal.min.js?v=@release"></script>
+</body>
+</html>

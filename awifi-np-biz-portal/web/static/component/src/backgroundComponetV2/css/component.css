@@ -1,0 +1,38 @@
+@charset "utf-8";
+._Entity_ {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+._Entity_ .backgroundPic {
+    background-color: #C6C6C6;
+    height: 140px;
+    color: white;
+    font-size: 12px;
+    line-height: 140px;
+    text-align: center;
+}
+
+._Entity_ .backgroundPic_phone {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+._Entity_ .backgroundPic_phone img {
+    width: 100%;
+    height: 100%;
+}
+
+._Entity_ .containerCenter {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+._Entity_ {
+	word-break: break-all;
+	word-break: break-word;
+	/*padding: 6px;*/
+	/*position: relative;*/
+}
+._Entity_ .container {
+	width: 100%;
+	min-height: 180px;
+}
+._Entity_ .container .title_container {
+	height: 50px;
+}
+._Entity_ .container .title_container .title{
+	float: left;
+	font-size: 18px;
+	line-height: 50px;
+}
+._Entity_ .container .titleAdd{
+	float: right;
+	margin-top: 12px;
+	padding: 0 9px;
+	line-height: 26px;
+	border-radius: 3px;
+	background-color: #2E67B6;
+	border: 0;
+	color: #fff;
+	font-size: 14px;
+}
+._Entity_ .container .commentContainer .getMore{
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 16px;
+	color: #aaa;
+	background-color: #F0F0F0;
+	border-radius: 4px;
+	border: 0;
+}
+/*评论列表*/
+._Entity_ .m-CommentItem{
+	margin: 20px 0;
+	overflow: hidden;
+	text-align: left;
+}
+._Entity_ .m-CommentItem .leftPic{
+	float: left;
+	width: 18%;
+}
+._Entity_ .m-CommentItem .leftPic span{
+	display: inline-block;
+	width: 95%;
+	background-image: url(../../../../images/commentUser.png);
+	background-repeat: no-repeat;
+	padding-top: 100%;
+	background-size: 100%;
+}
+._Entity_ .m-CommentItem .rightComment{
+	margin-left: 20%;
+}
+._Entity_ .m-CommentItem .rightComment .firstRow{
+	overflow: hidden;
+}
+._Entity_ .m-CommentItem .rightComment .firstRow h4{
+	float: left;
+	padding-left: 5px;
+	color: #2E67B6;
+	font-size: 16px;
+}
+._Entity_ .m-CommentItem .rightComment .firstRow button{
+	float: right;
+	width: 34px;
+	line-height: 22px;
+	background-color: #E6EAEF;
+	color: #2E67B6;
+	border: 0;
+}
+._Entity_ .m-CommentItem .rightComment .ipTime{
+	margin-top: 5px;
+	color: #aaa;
+}
+._Entity_ .m-CommentItem .rightComment .context{
+	margin: 8px 0;
+	line-height: 26px;
+	font-size: 14px;
+	color: #3E3E3E;
+}
+._Entity_ .m-CommentItem .rightComment .pics{
+	overflow: hidden;
+}
+._Entity_ .m-CommentItem .rightComment .pics li{
+	float: left;
+	width: 33%;
+	padding: 1.5%;
+}
+._Entity_ .m-CommentItem .rightComment .pics .picItem{
+	position: relative;
+	padding-top: 100%;
+	height: 0;
+}
+._Entity_ .m-CommentItem .rightComment .pics img{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+._Entity_ .m-CommentItem .rightComment .replyPanel{
+	padding: 5px 10px;
+	background-color: #F0F0F0;
+	line-height: 30px;
+}
+._Entity_ .m-CommentItem .rightComment .replyPanel li{
+	cursor: pointer;
+}
+._Entity_ .m-CommentItem .rightComment .replyPanel .user{
+	color: #2E67B6;
+}
+/*蒙层*/
+._Entity_ .m-CoverContain{
+	position: fixed;
+	height: 100%;
+	top: 0;
+	margin-left: -15px;
+	overflow: auto;
+	z-index: 99;
+}
+._Entity_ .m-Mask{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	filter: Alpha(Opacity=30);
+	opacity: 0.3;
+	background-color: #000;
+}
+._Entity_ .m-Mask img{
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	width: 90%;
+	transform: translate3d(0, -50%, 0);
+	cursor: pointer;
+}
+/*回复input*/
+._Entity_ .m-Reply{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	padding: 0;
+	border-top: 1px solid #f1f1f1;
+	background: #fff;
+}
+._Entity_ .m-Reply input{
+	display: inline-block;
+	width: 100%;
+	padding: 0 100px 0 15px;
+	line-height: 40px;
+	border: 0;
+	font-size: 14px;
+}
+._Entity_ .container .m-Reply .titleAdd{
+	position: absolute;
+	right: 15px;
+	margin-top: 5px;
+	width: 75px;
+}
+/*添加评论*/
+._Entity_ .container .m-AddComment{
+	position: fixed;
+	top: 0;
+	height: 100%;
+	padding: 25px 10px;
+	margin-left: -15px;
+	background-color: #F0F0F0;
+	overflow: auto;
+}
+._Entity_ .container .m-AddComment .m-TextArea{
+	display: block;
+	width: 100%;
+	padding: 0 18px;
+	line-height: 34px;
+	font-size: 14px;
+	border: 0;
+}
+._Entity_ .container .m-AddComment .btnPanel{
+	text-align: center;
+}
+._Entity_ .container .m-AddComment .u-btn-Sure, ._Entity_ .container .m-AddComment .u-btn-Cancel{
+	width: 120px;
+	height: 34px;
+	line-height: 32px;
+	font-size: 12px;
+	border-radius: 5px;
+}
+._Entity_ .container .m-AddComment .u-btn-Sure{
+	background-color: #2E67B6;
+	border: 1px solid #2E67B6;
+	color: #fff;
+}
+._Entity_ .container .m-AddComment .u-btn-Sure.disabled{
+	background-color: #999;
+	border-color: #999;
+}
+._Entity_ .container .m-AddComment .u-btn-Cancel{
+	margin-left: 10px;
+	background-color: #E6EAEF;
+	border: 1px solid #E6EAEF;
+	color: #2E67B6;
+}
+._Entity_ .m-UploadButton{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+._Entity_ .m-UploadButton li{
+	float: left;
+	position: relative;
+	margin: 10px 1.5% 0;
+	margin-top: 10px;
+	width: 30%;
+	border: 1px solid #d0d0d0;
+	list-style-type: none;
+}
+._Entity_ .m-UploadButton li .background{
+	padding-top: 100%;
+	background: #fff no-repeat center;
+	background-size: cover;
+}
+._Entity_ .m-UploadButton .delete {
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+	z-index: 99;
+	background-color: rgb(0, 0, 0);
+}
+._Entity_ .m-UploadButton .delete button {
+	color: #fff;
+	font-size: 26px;
+	float: right;
+	text-align: right;
+	line-height: 100%;
+	height: 100%;
+	background: transparent;
+	border: 0;
+}
+._Entity_ .m-UploadButton .progress {
+	position: absolute;
+	margin: 0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(100, 149, 198, .5);
+	color: #FFF;
+	border-radius: 0;
+	text-align: center;
+	font-size: 13px;
+}
+._Entity_ .m-UploadButton  input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+._Entity_ .m-UploadButton .add{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	margin-top: -5%;
+	font-size: 5em;
+	color: #d0d0d0;
+	font-weight: bold;
+}

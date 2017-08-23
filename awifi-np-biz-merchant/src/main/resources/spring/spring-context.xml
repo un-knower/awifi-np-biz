@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+	<description>Spring公共配置 </description>
+
+	<!-- 载入类路径下的properties属性文件 -->
+	<context:property-placeholder location="classpath*:*.properties" />
+	
+	<aop:aspectj-autoproxy />
+
+	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+	<context:component-scan base-package="com.awifi.np">
+		<!-- 在装载spring mvc 时会加载这些Controller 因此在这边排除加载 如果不排除会造成事务失效 -->
+		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation" />
+	</context:component-scan>
+	
+	<!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->  
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+        <property name="basenames">  
+            <list>  
+                <!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找  -->  
+                <value>classpath:messages/messages</value>  
+            </list>  
+        </property>  
+        <property name="useCodeAsDefaultMessage" value="false"/>  
+        <property name="defaultEncoding" value="UTF-8"/>  
+        <property name="cacheSeconds" value="60"/>  
+    </bean>
+	
+	<import resource="classpath*:spring/spring-db-np-biz.xml" /><!-- np biz 数据源及事务配置 -->
+	<import resource="classpath*:spring/spring-db-toe-admin.xml" /><!-- toe admin 数据源及事务配置 -->
+    <import resource="classpath*:spring/spring-db-mws.xml" /><!-- 微站 数据源及事务配置 -->
+	<import resource="classpath*:spring/spring-mybatis.xml" /><!-- mybatis配置 -->
+	<import resource="classpath*:spring/spring-redis.xml" /><!-- redis配置 -->
+
+</beans>

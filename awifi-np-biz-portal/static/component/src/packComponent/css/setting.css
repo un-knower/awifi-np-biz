@@ -1,0 +1,19 @@
+@charset "utf-8";
+._Setting_ {
+    padding-top: 15px;
+}
+._Setting_ .control-label {
+    width: 80px;
+    vertical-align: top;
+}
+._Setting_ .inline-block {
+    display: inline-block;
+}
+._Setting_ .form-save {
+    padding: 10px 20px;
+}
+
+.fix-bottom{
+    position:relative;
+    bottom:0px;
+}

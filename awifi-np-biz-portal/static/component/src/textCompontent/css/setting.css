@@ -1,0 +1,35 @@
+@charset "utf-8";
+._Setting_ {
+    padding-top: 15px;
+}
+._Setting_ .fnnormal {
+    font-size: 14px;
+    line-height: 24px;
+}
+._Setting_ .fnbigger {
+    font-size: 16px;
+    line-height: 24px;
+}
+._Setting_ .fnbig {
+    font-size: 18px;
+    line-height: 24px;
+}
+._Setting_ .mt {
+    margin-top: 5px;
+}
+._Setting_ .gray {
+    color: #999;
+}
+._Setting_ .tac {
+    text-align: center;
+}
+._Setting_ .control-label {
+    width: 80px;
+    vertical-align: top;
+}
+._Setting_ .inline-block {
+    display: inline-block;
+}
+._Setting_ .form-save {
+    padding: 10px 20px;
+}

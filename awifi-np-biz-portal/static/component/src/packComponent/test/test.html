@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal制作工具</title>
+    <!--css_tool_lib-->
+    <link rel="stylesheet" href="../../../../css/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../../css/lib/bootstrap/bootstrap-colorpicker.min.css" />
+    <link rel="stylesheet" href="../../../../css/lib/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="../../../../css/lib/tooltipster.css" />
+    <link rel="stylesheet" href="../../../../css/lib/jdialog.css" />
+    <!--css_tool-->
+    <link rel="stylesheet" href="../../../../css/tool/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../../css/tool/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../../../../css/tool/setting.css" />
+    <link rel="stylesheet" href="../../../../css/tool/tool.css" />
+    <!--component-->
+    <link rel="stylesheet" href="../css/component.css" />
+    <link rel="stylesheet" href="../css/setting.css" />
+    <!--react-->
+    <script src="../../../../js/lib/react/react.js"></script>
+    <script src="../../../../js/lib/react/react-dom.js"></script>
+    <script src="../../../../js/lib/react/browser.js"></script>
+    <!--js_tool_lib-->
+    <script src="../../../../js/lib/jquery/jquery-1.11.2.min.js"></script>
+    <script src="../../../../js/lib/jquery/jquery-ui.min.js"></script>
+    <script src="../../../../js/lib/bootstrap/bootstrap-colorpicker.min.js"></script>
+    <script src="../../../../js/lib/jdialog.js"></script>
+    <script src="../../../../js/tool/portal-tool.js"></script>
+    <script src="../../../../js/lib/bootstrap/bootstrap.min.js"></script>
+    <!--<script src="../../../src/advertComponent/test/component.js"></script>-->
+
+    <script type="text/javascript">
+        var _GLOBAL_KEY = '{@globalKey@}';/**全局日志key*/
+        var _GLOBAL_VALUE = '{@globalValue@}';/**全局日志value*/
+        var _DEV_ID = '{@devId@}';/**设备id*/
+        var _DEV_MAC = '{@devMac@}';/**设备MAC*/
+        var _SSID = '{@ssid@}';/**ssid*/
+
+        var _USER_IP = '{@userIp@}';/**用户ip*/
+        var _USER_MAC = '{@userMac@}';/**用户mac地址*/
+        var _USER_PHONE = '{@userPhone@}';/**用户手机号*/
+        var _URL = '{@url@}';/**用户浏览器输入的被拦截前的url原始地址*/
+        var _LOGIN_TYPE = '{@loginType@}';/**登录类型: authed 代表已认证过，控制页面显示“免费上网”；unauth 代表未认证过，页面显示 “手机号认证”或“用户名认证”*/
+        var _GW_ADDRESS = '{@gwAddress@}';/**胖AP类设备网关*/
+        var _GW_PORT = '{@gwPort@}';/**胖AP类设备端口*/
+        var _NAS_NAME = '{@nasName@}';/**nas设备名称，NAS认证必填*/
+
+        var _CUSTOMER_ID = '{@customerId@}';/**客户id*/
+
+        var _SITE_ID = '{@siteId@}';/**站点id*/
+        var _SITE_PAGE_ID = '{@sitePageId@}';/**站点页面id*/
+        var _SITE_NAME = '{@siteName@}';/**站点名称*/
+        var _PAGE_TYPE = '{@pageType@}';/**站点页面类型:1 引导页、2 认证页、3 过渡页、4 导航页*/
+        var _NUM = '{@num@}';/**站点页面序号*/
+
+    </script>
+
+</head>
+<body>
+
+<div id="main" class="clfix" style="padding-top: 20px">
+    <div id="component-wrap">
+        <div id="comp-main-wrap">
+            <ul id="comp-main" class="entities">
+                <li id="entity" style="min-height:auto"></li>
+            </ul>
+        </div>
+
+        <div id="comp-setting">
+            <h2 class="title">组件内容管理</h2>
+            <div id="comp-set">
+                <div id="setting" class="_Setting_"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--component-->
+<script type="text/babel" src="test.js"></script>
+
+</body>
+</html>

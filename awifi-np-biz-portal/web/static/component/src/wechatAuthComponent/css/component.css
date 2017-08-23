@@ -1,0 +1,57 @@
+@charset "utf-8";
+._Entity_ {
+    max-width: 320px;
+    margin: 0 auto;
+}
+._Entity_ .weiwangpu_wp {
+    padding:12px 20px;
+}
+._Entity_ .weiwangpu_btn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFF;
+    background-color: #0D8CDB;
+    border-radius: 5px;
+    border: 0 none;
+    font-size: 16px;
+}
+
+._Entity_.st1 .weiwangpu_btn {
+    background-color: #0D8CDB;
+}
+._Entity_.st2 .weiwangpu_btn {
+    background-color: #693305;
+}
+._Entity_.st3 .weiwangpu_btn {
+    background-color: #E8A4A5;
+}
+._Entity_.st4 .weiwangpu_btn {
+    background-color: #FCCF38;
+}
+._Entity_.st5 .weiwangpu_btn {
+    background-color: #10C35B;
+}
+._Entity_.st6 .weiwangpu_btn {
+    background-color: #D83433;
+}
+
+._Entity_ #weiwangpu_load {
+    display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.35);
+}
+._Entity_ #weiwangpu_load .loading {
+    position:absolute; left:50%; top:50%; width: 42px; height: 42px; margin:-21px 0 0 -21px;
+    background: url("../image/wechat_loading.gif") no-repeat 0 0;
+}
+._Entity_ #weiwangpu_load .tips_content {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    color: #FFF;
+    font-size: 16px;
+}

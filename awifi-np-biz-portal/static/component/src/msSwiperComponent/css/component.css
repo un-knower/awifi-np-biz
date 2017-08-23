@@ -1,0 +1,99 @@
+@@charset "utf-8";
+
+._Entity_ {
+    word-break: break-all;
+    word-break: break-word;
+    /*padding: 6px;*/
+    /*position: relative;*/
+}
+
+/*图片轮播*/
+._Entity_ .carousel-indicators li {
+    display: inline-block;
+}
+
+/**
+ * slider
+ * @authors Ping YF (koakumaping@163.com)
+ * @date    2015-10-28 14:01:13
+ * @version $Id$
+ */
+
+._Entity_ .carousel {
+    /*display: none;*/
+    position: relative;
+    overflow: auto;
+}
+
+._Entity_ .carousel-ul {
+    padding: 0;
+    margin: 0;
+}
+
+._Entity_ .carousel-ul-li {
+    list-style: none;
+    float: left;
+}
+
+._Entity_ .carousel-img {
+    display: block;
+    position: relative;
+    left: 0;
+    padding-top: 0px;
+}
+
+
+
+/*body, ul, dl, dd, dt, ol, li, p, h1, h2, h3, h4, h5, h6, textarea, form, select, fieldset, table, td, div, input {margin:0;padding:0;-webkit-text-size-adjust: none}
+h1, h2, h3, h4, h5, h6{font-size:12px;font-weight:normal}
+body>div{margin:0 auto}
+.carousel div {text-align:left}
+a img {border:0}
+body { color: #333; text-align: center; font: 12px "宋体"; }*/
+._Entity_ ul, ._Entity_ ol,._Entity_ li {list-style-type:none;vertical-align:0}
+._Entity_ a {outline-style:none;color:#535353;text-decoration:none}
+._Entity_ a:hover { color: #D40000; text-decoration: none}
+._Entity_ .button {display: inline-block;zoom: 1; *display: inline;vertical-align: baseline;margin: 0 2px;outline: none;cursor: pointer;text-align: center;text-decoration: none;font: 14px/100% Arial, Helvetica, sans-serif;padding:0.25em 0.6em 0.3em;text-shadow: 0 1px 1px rgba(0,0,0,.3);-webkit-border-radius: .5em; -moz-border-radius: .5em;border-radius: .5em;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+._Entity_ .red {color: #faddde;border: solid 1px #980c10;background: #d81b21;background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#A51715));background: -moz-linear-gradient(top,  #ed1c24,  #A51715);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+._Entity_ .red:hover { background: #b61318; background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115)); background: -moz-linear-gradient(top,  #c9151b,  #a11115); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115'); color:#fff;}
+._Entity_ .red:active {color: #de898c;background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');}
+._Entity_ .cor_bs,._Entity_ .cor_bs:hover{color:#ffffff;}
+._Entity_ .keBody{background:url(../images/bodyBg.jpg) repeat #333;}
+._Entity_ .keTitle{height:100px; line-height:100px; font-size:30px; font-family:'微软雅黑'; color:#FFF; text-align:center; background:url(../images/bodyBg3.jpg) repeat-x bottom left; font-weight:normal}
+._Entity_ .kePublic{background:#FFF; padding:50px;}
+._Entity_ .keBottom{color:#FFF; padding-top:25px; line-height:28px; text-align:center; font-family:'微软雅黑'; background:url(../images/bodyBg2.jpg) repeat-x top left; padding-bottom:25px}
+._Entity_ .keTxtP{font-size:16px; color:#ffffff;}
+._Entity_ .keUrl{color:#FFF; font-size:30px;}
+._Entity_ .keUrl:hover{ text-decoration: underline; color: #FFF; }
+._Entity_ .mKeBanner,.mKeBanner div{text-align:center;}
+/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+/* 效果CSS开始 */
+._Entity_ .slider{display:none}/*用于获取更加体验*/
+._Entity_ .focus span{width:10px;height:10px;margin-right:10px;border-radius:50%;background:#666;font-size:0}
+._Entity_ .focus{
+    background:rgba(0,0,0,0)!important;
+    text-align:center;
+    bottom:10px!important;
+}
+._Entity_ .focus>div{
+    position:relative!important;
+    /*margin:1 auto;!important;*/
+    /*left:50%!important;*/
+    margin-left: auto!important;
+    margin-right: auto!important;
+    /* margin: auto!important; */
+    right: 0px!important;
+}
+._Entity_ .focus span.current{background:#fff}
+/* 效果CSS结束 */
+
+._Entity_ {
+    background-color: #f0f0f0;
+    padding-bottom: 10px!important;
+}
+._Entity_  .container{
+    background-color: white;
+
+}

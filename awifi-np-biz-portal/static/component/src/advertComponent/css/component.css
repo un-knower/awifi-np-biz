@@ -1,0 +1,13 @@
+/*广告组件 Component CSS*/
+@charset "utf-8";
+._Entity_ {
+    width: 100%;
+}
+._Entity_ .areaIp {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #c6c6c6;
+    position: absolute;
+    top:0px;
+}

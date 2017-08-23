@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>中国电信爱WiFi</title>
+    <link rel="stylesheet" type="text/css" href="/css/ie8_timebuy.min.css"/>
+
+    <script type="text/javascript">
+        var _GLOBAL_KEY = '{@globalKey@}';/**全局日志key*/
+        var _GLOBAL_VALUE = '{@globalValue@}';/**全局日志value*/
+        var _DEV_ID = '{@devId@}';/**设备id*/
+        var _DEV_MAC = '{@devMac@}';/**设备MAC*/
+        var _SSID = '{@ssid@}';/**ssid*/
+
+        var _USER_IP = '{@userIp@}';/**用户ip*/
+        var _USER_MAC = '{@userMac@}';/**用户mac地址*/
+        var _USER_PHONE = '{@userPhone@}';/**用户手机号*/
+        var _URL = '{@url@}';/**用户浏览器输入的被拦截前的url原始地址*/
+        var _LOGIN_TYPE = '{@loginType@}';/**登录类型: authed 代表已认证过，控制页面显示“免费上网”；unauth 代表未认证过，页面显示 “手机号认证”或“用户名认证”;welcome 代表认证已放行（如果是胖AP需要用token调用设备总线接口），可以上外网*/
+        var _GW_ADDRESS = '{@gwAddress@}';/**胖AP类设备网关*/
+        var _GW_PORT = '{@gwPort@}';/**胖AP类设备端口*/
+        var _NAS_NAME = '{@nasName@}';/**nas设备名称，NAS认证必填*/
+        var _CVLAN = '{@cvlan@}';/**cvlan*/
+        var _PVLAN = '{@pvlan@}';/**pvlan*/
+        var _TOKEN = '{@token@}';/**用户token*/
+        var _PLATFORM = '{@platform@}';/**省分平台-前缀*/
+
+        var _CUSTOMER_ID = '{@customerId@}';/**客户id*/
+        var _CASCADE_LABEL = '{@cascadeLabel@}';/**客户层级*/
+
+        var _PAGE_TYPE = '{@pageType@}';/**站点页面类型:1 引导页、2 认证页、3 过渡页、4 导航页*/
+        var _NUM = '{@num@}';/**站点页面序号*/
+
+//        var _DEV_ID = 'FatAP_31_20160824d8ff5e82-6223-4ea9-b06c-8df5e4b264a5';
+//        var _GLOBAL_KEY = '1';
+//        var _USER_PHONE = '15305812613';
+//        var _USER_MAC = 'FAFAFAFAFAFA';
+//        var _USER_IP = '192.168.25.45';
+//        var _GW_ADDRESS = '1.1.1.1';
+//        var _GW_PORT = '8000';
+//        var _NAS_NAME = 'test';
+//        var _LOGIN_TYPE = 'authed';
+//        var _CUSTOMER_NAME = '测试测试测试';
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-title"></div>
+        </div>
+        <div class="content">
+            <!--登录-->
+            <div class="content-login" style="display: none">
+                <div class="account">
+                    <input type="text" id="acount" value="" placeholder="请输入手机号码"/>
+                </div>
+                <div class="code">
+                    <div class="setcode">
+                        <input type="text" id="code" value="" placeholder="输入验证码"/>
+                    </div>
+                    <div class="getcode">
+                        <input type="button" id="smscode" value="获取验证码" onClick="getCode()"/>
+                    </div>
+                </div>
+                <div class="login-btn">
+                    <input type="button" value="登录" onClick="getLogin()"/>
+                </div>
+            </div>
+            <!--一键登录-->
+            <div class="content-fastlogin" style="display: none">
+                <div class="fastlogin-user"></div>
+                <div class="fastlogin-btn">
+                    <input type="button" value="一键登录" onClick="getFastLogin()"/>
+                </div>
+            </div>
+            <!--VIP用户-->
+            <div class="content-vip" style="display: none">
+                <div class="vip-msg"></div>
+            </div>
+            <!--园区买断-->
+            <div class="content-buyout" style="display: none">
+                <div class="buyout-msg"></div>
+            </div>
+            <!--时长购买-->
+            <div class="content-timebuy" style="display: none">
+                <div class="getfreepkg">
+                    <input type="button" value="免费体验包" onClick="getFreePkg()"/>
+                </div>
+                <div class="timebuy-msg"></div>
+                <div class="timebuy">
+                    <input type="button" value="时长购买" onClick="timeBuy()"/>
+                </div>
+            </div>
+            <!--切换账号和消费详情按钮-->
+            <div class="content-changebtn">
+                <div class="changeaccount" onClick="changeToAccount()">切换账号</div>
+                <div class="timebuydetail" id="timebuydetailbtn" onClick="openDetail()">
+                    <span>消费详情</span>
+                    <div class="close" id="icon"></div>
+                </div>
+            </div>
+            <!--消费列表-->
+            <div class="content-details" style="display: none">
+                <div class="user-title">时长信息</div>
+                <ul class="user-msg">
+                    <li id="user-iphone">当前账号：</li>
+                    <li id="user-endtime">有效期至：</li>
+                </ul>
+                <div class="user-title">充值记录</div>
+                <ul class="user-timemsg" id="user-timemsg">
+                    <!--<li>-->
+                        <!--<div class="time">2017年11月11日 11：11：11</div>-->
+                        <!--<div class="price">多少钱</div>-->
+                    <!--</li>-->
+                    <!--<li>2017年11月11日 11：11：11</li>-->
+                    <li id='paymore'>
+                        <div class="detail-btn" onClick='pageChange()'>
+                            <div class="detail-img"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="/js/ie8_timebuy.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{@siteTitle@}</title>
+    <link rel="stylesheet" type="text/css" href="/css/portal_lib.min.css">
+    <link rel="stylesheet" type="text/css" href="css/portal.min.css">
+</head>
+<body>
+<!--awifi-container来自portal页面公用的CSS-->
+<div class="awifi-container">
+    <!--某个组件内容的开始-->
+    {@componentDivs@}
+    <!--某个组件内容的结束-->
+</div>
+
+
+<script type="text/javascript">
+var _GLOBAL_KEY = '{@globalKey@}';/**全局日志key*/
+var _GLOBAL_VALUE = '{@globalValue@}';/**全局日志value*/
+var _DEV_ID = '{@devId@}';/**设备id*/
+var _DEV_MAC = '{@devMac@}';/**设备MAC*/
+var _SSID = '{@ssid@}';/**ssid*/
+
+var _USER_IP = '{@userIp@}';/**用户ip*/
+var _USER_MAC = '{@userMac@}';/**用户mac地址*/
+var _USER_PHONE = '{@userPhone@}';/**用户手机号*/
+var _URL = '{@url@}';/**用户浏览器输入的被拦截前的url原始地址*/
+var _LOGIN_TYPE = '{@loginType@}';/**登录类型: authed 代表已认证过，控制页面显示“免费上网”；unauth 代表未认证过，页面显示 “手机号认证”或“用户名认证”;welcome 代表认证已放行（如果是胖AP需要用token调用设备总线接口），可以上外网*/
+var _GW_ADDRESS = '{@gwAddress@}';/**胖AP类设备网关*/
+var _GW_PORT = '{@gwPort@}';/**胖AP类设备端口*/
+var _NAS_NAME = '{@nasName@}';/**nas设备名称，NAS认证必填*/
+var _CVLAN = '{@cvlan@}';/**cvlan*/
+var _PVLAN = '{@pvlan@}';/**pvlan*/
+var _TOKEN = '{@token@}';/**用户token*/
+var _PLATFORM = '{@platform@}';/**省分平台-前缀*/
+
+var _CUSTOMER_ID = '{@customerId@}';/**客户id*/
+var _CASCADE_LABEL = '{@cascadeLabel@}';/**客户层级*/
+
+var _SITE_ID = '{@siteId@}';/**站点id*/
+var _SITE_PAGE_ID = '{@sitePageId@}';/**站点页面id*/
+var _SITE_NAME = '{@siteName@}';/**站点名称*/
+var _PAGE_TYPE = '{@pageType@}';/**站点页面类型:1 引导页、2 认证页、3 过渡页、4 导航页*/
+var _NUM = '{@num@}';/**站点页面序号*/
+var _DISCLAIMER = 'none';/** none 代表 无免责声明组件、agree 代表 免责声明组件已勾选同意、refuse 代表 免责声明组件未勾选同意  */
+</script>
+<script type="text/javascript" src="/js/portal_lib.min.js"></script>
+<script type="text/javascript" src="script/portal.min.js"></script>
+</body>
+</html>

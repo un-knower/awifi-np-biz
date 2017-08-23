@@ -1,0 +1,13 @@
+@charset "utf-8";
+.fnnormal {
+    font-size: 14px;
+    line-height: 24px;
+}
+.fnbigger {
+    font-size: 16px;
+    line-height: 24px;
+}
+.fnbig {
+    font-size: 18px;
+    line-height: 24px;
+}

@@ -1,0 +1,73 @@
+http://mp.weixin.qq.com/wiki/static/assets/f18a017efee3c829ad128cbbd361f2b0.png
+
+http://mp.weixin.qq.com/wiki/10/0ef643c7147fdf689e0a780d8c08ab96.html#
+
+
+临时放行
+* 入参
+global_key: 'xx',
+global_value: 'xx',
+auth_type: 'WECHAT',
+mac: _USERMAC_,
+dev_id: _DEVID_,
+ac_name: _ACNAME_,
+user_ip: _USERIP_,
+site_id: _SITEID_,
+from: _FROMKEY_,
+browser_type: $.client.browser,
+dev_mac: _DEVICEMAC_,
+terminal_type: $.client.os
+customer_id: '客户Id'
+
+*出参
+token
+== 以上朱学煌传参
+
+
+
+
+第三方应用
+shopid
+* 入参
+dev_id: _DEVID_,
+token: that.params['extend'],
+mac: '',
+ssid: '',
+bssid: ''
+
+* 出参
+shopid
+
+== 以上牛华凤
+
+
+// Wechat_GotoRedirect(appId, extend, timestamp, sign, shopId, authUrl, mac, ssid, bssid);
+Wechat_GotoRedirect(_data.appId, that.params['extend'], _data.timestamp, _data.sign, _data.shopid, _data.authUrl, '', '', '');
+
+== 郭海勇
+
+
+//将回调函数名称带到服务器端
+    var url = "https://wifi.weixin.qq.com/operator/callWechatBrowser.xhtml?appId=" + appId
+        + "&extend=" + extend
+        + "&timestamp=" + timestamp
+        + "&sign=" + sign;
+    //如果sign后面的参数有值，则是新3.1发起的流程
+    if(authUrl && shopId){
+        url = "https://wifi.weixin.qq.com/operator/callWechat.xhtml?appId=" + appId
+            + "&extend=" + extend
+            + "&timestamp=" + timestamp
+            + "&sign=" + sign
+
+
+            + "&shopId=" + shopId
+            + "&authUrl=" + encodeURIComponent(authUrl)
+            + "&mac=" + mac
+            + "&ssid=" + ssid
+            + "&bssid=" + bssid;
+    }
+
+
+try{jsonpCallback({"data":"weixin://connectToFreeWifi/?apKey=http%3A%2F%2Fmp.weixin.qq.com%2Fmp%2Fwifi%3Fq%3D04f5f93f6f92f7e2&ticket=e7c039c136f858ad967087210aa31ee3","success":true}
+)}catch(e){}
+

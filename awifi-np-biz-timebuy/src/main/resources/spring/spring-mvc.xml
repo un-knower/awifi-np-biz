@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	                    http://www.springframework.org/schema/aop 
+	                    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	                    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+	                    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd">
+	
+	
+	<!-- 对静态资源文件的访问 -->
+	<!-- <mvc:resources mapping="/static/**" location="/static/"/> -->
+	
+	<!-- api扫描-->
+	<context:component-scan base-package="com.cpj.swagger.support.springmvc">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+
+
+	<mvc:default-servlet-handler />
+	
+	<!-- Spring MVC的统一异常处理 -->
+    <bean class="com.awifi.np.biz.common.exception.handler.ExceptionHandler" id="exceptionResolver">  </bean>
+	
+	<!-- task任务扫描注解  
+	<task:annotation-driven/>
+	--> 
+	<!-- 上传下载操作  -->
+	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		  <property name="defaultEncoding" value="utf-8" />
+	      <property name="maxUploadSize" value="10485760000" />
+	      <property name="maxInMemorySize" value="40960" />
+	</bean> -->
+	
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/WEB-INF/jsp/"/>  
+        <property name="suffix" value=".jsp"/>  
+    </bean>  
+	
+	<!-- 只扫描@Controller注释的类 -->
+	<context:component-scan base-package="com.awifi.np.biz.timebuysrv.**.controller" use-default-filters="false">
+		<context:include-filter expression="org.springframework.stereotype.Controller" type="annotation" />
+	</context:component-scan>
+	<context:component-scan base-package="com.awifi.np.biz.timebuysrv.web.core.annotation"/>
+	<aop:aspectj-autoproxy />
+	<!-- json 处理 -->
+	<bean id="jsonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+		<property name="serializationInclusion">
+			<value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_EMPTY</value>
+		</property>
+	</bean>
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
+				<property name="objectMapper" ref="jsonObjectMapper" />
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+						<value>application/json;charset=utf-8</value>
+					</list>
+			    </property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+    
+    
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <!-- 管理系统数据接口拦截器（客户端） -->
+        <mvc:interceptor>
+            <mvc:mapping path="/timebuysrv1/**"/><!-- 暂时屏蔽 以后加入需要管理系统调用的接口url-->
+            <mvc:exclude-mapping path="/timebuysrv/permission/check"/><!-- 屏蔽 权限接口  -->
+            <mvc:exclude-mapping path="/timebuysrv/security/check"/><!-- 屏蔽 安全接口  -->
+            <mvc:exclude-mapping path="/timebuysrv/view/**"/><!-- 屏蔽 管理系统数据显示拦截器（客户端）  -->
+            <mvc:exclude-mapping path="/timebuysrv/am/**"/><!-- 屏蔽  管理系统数据接口拦截器（服务端）  -->
+            <mvc:exclude-mapping path="/timebuysrv/privateapi/**"/><!-- 屏蔽  内部私有api  -->
+            <bean class="com.awifi.np.biz.api.client.npadmin.interceptor.NPAdminDataInterceptor">
+                <property name="serviceCodeKey" value="servicecode_timebuy" /><!-- 系统参数配置表中的服务编号key -->
+            </bean>
+        </mvc:interceptor>
+        
+        <!-- 管理系统数据显示拦截器（客户端） -->
+        <mvc:interceptor>
+            <mvc:mapping path="/timebuysrv/view/**"/>
+            <bean class="com.awifi.np.biz.api.client.npadmin.interceptor.NPAdminViewInterceptor">
+                <property name="serviceCodeKey" value="servicecode_timebuy" /><!-- 系统参数配置表中的服务编号key -->
+            </bean>
+        </mvc:interceptor>
+        
+        <!-- 管理系统数据接口拦截器（服务端） -->
+        <mvc:interceptor>
+            <mvc:mapping path="/timebuysrv/am/**"/>
+            <bean class="com.awifi.np.biz.api.server.npadmin.interceptor.NPAdminInterceptor">
+                <property name="serviceCodeKey" value="servicecode_timebuy" /><!-- 系统参数配置表中的服务编号key -->
+                <property name="serviceKeyKey" value="servicekey_timebuy" /><!-- 系统参数配置表中的服务密钥key -->
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="UTF-8"/>  
+        <!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->  
+        <property name="maxUploadSize" value="20000000"/>  
+    </bean>  
+    
+   
+    
+</beans>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>审核站点</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/lib/jdialog.css">
+    <link rel="stylesheet" type="text/css" href="../css/preview/preview.css">
+    <link rel="stylesheet" type="text/css" href="../css/lib/poshytip/tip-yellow.css">
+    <link rel="stylesheet" type="text/css" href="../css/lib/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/tool/tool.css">
+</head>
+<body>
+<header id="header">
+    <div id="logo">
+        <div>portal制作</div>
+    </div>
+</header>
+<div class="main">
+    <div id="action">
+        <ul class="action-btn">
+            <li><a href="javascript:;" id="btn-preview" class="btn-preview">取消</a></li>
+            <li>
+                <button type="button" class="btn-save">确定</button>
+            </li>
+        </ul>
+    </div>
+    <div id="process">
+        <li><span>1</span>制作站点</li>
+        <li class="process-active"><span>2</span>审核站点</li>
+        <li><span>3</span>发布站点</li>
+    </div>
+
+    <div class="previewBody">
+        <div class="previewContent">
+            <div class="content">
+                <div class="top">
+                    <div class="voiceBtn"></div>
+                </div>
+                <div class="middle">
+                    <iframe id="iframeURL" src="" frameborder="0"></iframe>
+                </div>
+                <div class="bottom">
+                    <div class="homeBtn"></div>
+                </div>
+            </div>
+            <div class="nextLink">
+                <div class="upBtn" id="upBtn" style="display: none">上<br>一<br>页</div>
+                <div class="downBtn" id="downBtn" style="display: none">下<br>一<br>页</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/lib/jquery/jquery-1.11.3.min.js"></script>
+<script src="../js/lib/jquery/jquery.poshytip.min.js"></script>
+<script src="../js/lib/jdialog.js"></script>
+<script src="../js/lib/jquery/jquery-1.11.3.min.js"></script>
+<!--<script src="../js/preview/preview.js"></script>-->
+<script src="../js/site/review.js" type="text/javascript"></script>
+</body>
+</html>

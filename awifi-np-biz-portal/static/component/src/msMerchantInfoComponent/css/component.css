@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+._Entity_ {
+    word-break: break-all;
+    word-break: break-word;
+    /*padding: 6px;*/
+    /*position: relative;*/
+}
+._Entity_ .container {
+    width: 100%;
+    min-height: 200px;
+}
+._Entity_ .container .merchant_name {
+    /*font-family: PingFangSC-Medium;*/
+    font-size: 20px;
+    color: #333333;
+    letter-spacing: 0.12px;
+    text-align: center;
+    padding-top: 24px;
+}
+._Entity_ .container .merchant_info {
+    /*font-family: PingFangSC-Medium;*/
+    font-size: 14px;
+    color: #888888;
+    letter-spacing: 0.1px;
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 24px;
+    /*height: 60px;*/
+}
+._Entity_  .container .merchant_iconlist {
+    float: left;
+    padding-left: 20%;
+    width: 80%;
+    height: 50px;
+}
+._Entity_  .container .merchant_iconlist .location {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    background-image: url(../image/location.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+._Entity_  .container .merchant_iconlist .location:hover {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    background-image: url(../image/location_click.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+._Entity_  .container .merchant_iconlist .telephone {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    background-image: url(../image/telephone.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+._Entity_  .container .merchant_iconlist .telephone:hover {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    background-image: url(../image/telephone_click.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+._Entity_  .container .merchant_iconlist .time {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    background-image: url(../image/time.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+._Entity_  .container .merchant_iconlist .time:hover {
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    background-image: url(../image/time_click.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popover-title {
+    display: none;
+}
+
+._Entity_ {
+    background-color: #f0f0f0;
+    padding-bottom: 10px;
+}
+._Entity_  .container{
+    background-color: white;
+
+}
+._Entity_ .title_content{
+    font-size: 18px;
+    color: #66666;
+}
+
+._Entity_  .photo_container{
+    font-size: 18px;
+    color: #888888;
+}
+._Entity_  .merchant_name{
+    font-size:24px;
+    color:#333333;
+}
+._Entity_  .merchant_info{
+    font-size:14px;
+    color:#888888;
+}

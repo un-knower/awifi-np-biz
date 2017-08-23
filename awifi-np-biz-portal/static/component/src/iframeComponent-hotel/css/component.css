@@ -1,0 +1,21 @@
+/*iFrame组件 Component CSS*/
+@charset "utf-8";
+._Entity_ {
+    height: 100%;
+    position: relative;
+}
+._Entity_ iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+._Entity_ .nullIframeSrc {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFF;
+    background-color: #C6C6C6;
+    /*position: absolute;*/
+    /*top: 0px;*/
+}

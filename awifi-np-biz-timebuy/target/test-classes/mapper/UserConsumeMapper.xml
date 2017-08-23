@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.awifi.np.biz.timebuysrv.web.module.time.dao.UserConsumeDao">
+  <resultMap id="BaseResultMap" type="com.awifi.np.biz.timebuysrv.web.module.time.model.UserConsume">
+      <id column="ID" jdbcType="BIGINT" property="id" />
+      <result column="MERCHANT_ID" jdbcType="BIGINT" property="merchantId" />
+      <result column="USER_ID" jdbcType="BIGINT" property="userId" />
+      <result column="CONSUME_TYPE" jdbcType="INTEGER" property="consumeType" />
+      <result column="PACKAGE_ID" jdbcType="BIGINT" property="packageId" />
+      <result column="PACKAGE_NUM" jdbcType="INTEGER" property="packageNum" />
+      <result column="TOTAL_NUM" jdbcType="DECIMAL" property="totalNum" />
+      <result column="ORDER_ID" jdbcType="VARCHAR" property="orderId" />
+      <result column="PAY_NUM" jdbcType="DECIMAL" property="payNum" />
+      <result column="ADD_DAY" jdbcType="FLOAT" property="addDay" />
+      <result column="BEGIN_DATE" jdbcType="TIMESTAMP" property="beginDate" />
+      <result column="END_DATE" jdbcType="TIMESTAMP" property="endDate" />
+      <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+      <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+      <result column="BROADBAND_ACCOUNT" jdbcType="VARCHAR" property="broadbandAccount" />
+      <result column="PKG_PRICE" jdbcType="DECIMAL" property="pkgPrice" />
+      <result column="PKG_DETAIL" jdbcType="VARCHAR" property="pkgDetail" />
+      <result column="telno" jdbcType="VARCHAR" property="telephone" />
+      <result column="address" jdbcType="VARCHAR" property="address" />
+      <result column="merchantName" jdbcType="VARCHAR" property="merchantName" />
+  </resultMap>
+  
+	 <sql id="Base_Column_List">
+	 	ID,MERCHANT_ID,USER_ID,CONSUME_TYPE,PACKAGE_ID,
+	    PACKAGE_NUM,TOTAL_NUM,ORDER_ID,PAY_NUM,ADD_DAY,
+	    BEGIN_DATE,END_DATE,CREATE_DATE,REMARKS,
+	    BROADBAND_ACCOUNT,PKG_PRICE,PKG_DETAIL
+	 </sql>
+  	
+     <sql id="getQuerySQL">
+    	from center_pub_merchant_user_consume where 1=1
+        <if test="id != null and id !='' " >  
+          	and ID = #{id,jdbcType=BIGINT}
+        </if>  
+        <if test="merchantId != null and merchantId !='' " >  
+         	and MERCHANT_ID = #{merchantId,jdbcType=BIGINT}
+        </if>
+        <if test="userId != null and userId !='' " >  
+        	and USER_ID = #{userId,jdbcType=BIGINT}
+        </if>  
+        <if test="consumeType != null and consumeType !='' " >  
+         	and CONSUME_TYPE = #{consumeType,jdbcType=INTEGER}
+        </if>  
+        <if test="orderId != null and orderId !='' " >  
+         	and ORDER_ID = #{orderId,jdbcType=VARCHAR}
+        </if>
+        <if test="packageId != null and packageId !='' " >  
+         	and PACKAGE_ID = #{packageId,jdbcType=BIGINT}
+        </if>
+        <if test="createDateStart != null and createDateStart!=''">
+			and CREATE_DATE >= #{createDateStart,jdbcType=TIMESTAMP}
+		</if>
+		<if test="createDateEnd != null and createDateEnd!=''">
+      	<![CDATA[ 
+        	and CREATE_DATE <= date_add(#{createDateEnd,jdbcType=TIMESTAMP}, INTERVAL 1 day)
+        ]]>
+		</if>
+<!--       
+		<if test="packageNum != null and packageNum !='' " >  
+         	and PACKAGE_NUM = #{packageNum,jdbcType=INTEGER}
+        </if>
+        <if test="totalNum != null and totalNum !='' " >  
+         	and TOTAL_NUM = #{totalNum,jdbcType=DECIMAL}
+        </if>
+        <if test="payNum != null and payNum !='' " >  
+         	and PAY_NUM = #{payNum,jdbcType=DECIMAL}
+        </if> 
+		<if test="addDay != null and addDay !='' " >  
+         	and ADD_DAY = #{addDay,jdbcType=INTEGER}
+        </if>
+        <if test="beginDate != null and beginDate !='' " >  
+        	and BEGIN_DATE = #{beginDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="endDate != null and endDate !='' " >  
+         	and END_DATE = #{endDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="createDate != null and createDate !='' " >  
+         	and CREATEDATE = #{createDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="remarks != null and remarks !='' " >  
+        	and REMARKS like concat ('%',#{remarks},'%')
+        </if> 
+        <if test="broadbandAccount != null and broadbandAccount !='' " >  
+         	and BROADBAND_ACCOUNT = #{broadbandAccount,jdbcType=VARCHAR}
+        </if>
+        <if test="pkgPrice != null and pkgPrice !='' " >  
+         	and PKG_PRICE = #{pkgPrice,jdbcType=DECIMAL}
+        </if>
+        <if test="pkgDetail != null and pkgDetail !='' " >  
+          	and PKG_DETAIL = #{pkgDetail,jdbcType=VARCHAR}
+        </if>  
+-->
+  	</sql>
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from center_pub_merchant_user_consume
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  
+   <insert id="insertSelective" parameterType="com.awifi.np.biz.timebuysrv.web.module.time.model.UserConsume" >
+    insert into center_pub_merchant_user_consume
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+        <if test="id != null" >  
+           ID,
+        </if>  
+        <if test="merchantId != null" >  
+           MERCHANT_ID, 
+        </if>  
+        <if test="userId != null" >  
+           USER_ID, 
+        </if>  
+        <if test="consumeType != null" >  
+           CONSUME_TYPE, 
+        </if>  
+        <if test="packageId != null" >  
+           PACKAGE_ID, 
+        </if>
+        <if test="packageNum != null" >  
+           PACKAGE_NUM, 
+        </if> 
+        <if test="totalNum != null" >  
+           TOTAL_NUM, 
+        </if>
+        <if test="orderId != null" >  
+           ORDER_ID, 
+        </if>
+        <if test="payNum != null" >  
+           PAY_NUM, 
+        </if>
+        <if test="addDay != null" >  
+           ADD_DAY, 
+        </if>
+        <if test="beginDate != null" >  
+           BEGIN_DATE, 
+        </if>
+        <if test="endDate != null" >  
+           END_DATE, 
+        </if>
+        <if test="createDate != null" >  
+           CREATE_DATE, 
+        </if> 
+        <if test="remarks != null" >  
+           REMARKS, 
+        </if> 
+        <if test="broadbandAccount != null" >  
+           BROADBAND_ACCOUNT, 
+        </if> 
+        <if test="pkgPrice != null" >  
+           PKG_PRICE, 
+        </if> 
+        <if test="pkgDetail != null" >  
+           PKG_DETAIL, 
+        </if>        
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+        <if test="id != null" >  
+          #{id,jdbcType=BIGINT},
+        </if>  
+        <if test="merchantId != null" >  
+          #{merchantId,jdbcType=BIGINT},
+        </if>  
+        <if test="userId != null" >  
+          #{userId,jdbcType=BIGINT},
+        </if>  
+        <if test="consumeType != null" >  
+          #{consumeType,jdbcType=INTEGER},
+        </if>  
+        <if test="packageId != null" >  
+          #{packageId,jdbcType=BIGINT},
+        </if>
+        <if test="packageNum != null" >  
+          #{packageNum,jdbcType=INTEGER},
+        </if>  
+        <if test="totalNum != null" >  
+          #{totalNum,jdbcType=DECIMAL},
+        </if>  
+        <if test="orderId != null" >  
+          #{orderId,jdbcType=VARCHAR},
+        </if>  
+        <if test="payNum != null" >  
+          #{payNum,jdbcType=DECIMAL},
+        </if>  
+        <if test="addDay != null" >  
+          #{addDay,jdbcType=INTEGER},
+        </if>
+        <if test="beginDate != null" >  
+          #{beginDate,jdbcType=TIMESTAMP},
+        </if>  
+        <if test="endDate != null" >  
+          #{endDate,jdbcType=TIMESTAMP},
+        </if>
+        <if test="createDate != null" >  
+          #{createDate,jdbcType=TIMESTAMP},
+        </if>  
+        <if test="remarks != null" >  
+          #{remarks,jdbcType=VARCHAR},
+        </if>  
+        <if test="broadbandAccount != null" >  
+          #{broadbandAccount,jdbcType=VARCHAR},
+        </if>  
+        <if test="pkgPrice != null" >  
+          #{pkgPrice,jdbcType=DECIMAL},
+        </if>  
+        <if test="pkgDetail != null" >  
+          #{pkgDetail,jdbcType=	VARCHAR},
+        </if>   
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.awifi.np.biz.timebuysrv.web.module.time.model.UserConsume" >
+    update center_pub_merchant_user_consume
+    <set >
+        <if test="id != null" >  
+          	ID = #{id,jdbcType=BIGINT},
+        </if>  
+        <if test="merchantId != null" >  
+         	MERCHANT_ID = #{merchantId,jdbcType=BIGINT},
+        </if>  
+        <if test="userId != null" >  
+        	USER_ID = #{userId,jdbcType=BIGINT},
+        </if>  
+        <if test="consumeType != null" >  
+         	CONSUME_TYPE = #{consumeType,jdbcType=INTEGER},
+        </if>  
+        <if test="packageId != null" >  
+         	PACKAGE_ID = #{packageId,jdbcType=BIGINT},
+        </if>
+        <if test="packageNum != null" >  
+         	PACKAGE_NUM = #{packageNum,jdbcType=INTEGER},
+        </if>  
+        <if test="totalNum != null" >  
+         	TOTAL_NUM = #{totalNum,jdbcType=DECIMAL},
+        </if>  
+        <if test="orderId != null" >  
+         	ORDER_ID = #{orderId,jdbcType=VARCHAR},
+        </if>  
+        <if test="payNum != null" >  
+         	PAY_NUM = #{payNum,jdbcType=DECIMAL},
+        </if>  
+        <if test="addDay != null" >  
+         	ADD_DAY = #{addDay,jdbcType=INTEGER},
+        </if>
+        <if test="beginDate != null" >  
+        	BEGIN_DATE = #{beginDate,jdbcType=TIMESTAMP},
+        </if>  
+        <if test="endDate != null" >  
+         	END_DATE = #{endDate,jdbcType=TIMESTAMP},
+        </if>
+        <if test="createDate != null" >  
+         	CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+        </if>  
+        <if test="remarks != null" >  
+        	REMARKS = #{remarks,jdbcType=VARCHAR},
+        </if>  
+        <if test="broadbandAccount != null" >  
+         	BROADBAND_ACCOUNT = #{broadbandAccount,jdbcType=VARCHAR},
+        </if>  
+        <if test="pkgPrice != null" >  
+         	PKG_PRICE = #{pkgPrice,jdbcType=DECIMAL},
+        </if>  
+        <if test="pkgDetail != null" >  
+          	PKG_DETAIL = #{pkgDetail,jdbcType=VARCHAR},
+        </if>  
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <select id="listByParams" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    <include refid="getQuerySQL" />
+    order by CREATE_DATE ASC
+  </select>  
+  
+   <select id="listByParams4Page" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    <include refid="getQuerySQL" />
+    order by CREATE_DATE DESC limit #{start}, #{pageSize} 
+  </select> 
+  
+  <select id="unionListByParams4Page" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select 
+    t.ID,t.MERCHANT_ID,t.USER_ID,t.CONSUME_TYPE,t.PACKAGE_ID,
+        t.PACKAGE_NUM,t.TOTAL_NUM,t.ORDER_ID,t.PAY_NUM,t.ADD_DAY,
+        t.BEGIN_DATE,t.END_DATE,t.CREATE_DATE,t.REMARKS,
+        t.BROADBAND_ACCOUNT,t.PKG_PRICE,t.PKG_DETAIL,
+        u.telno,m.address,m.merchantName
+     
+        from center_pub_merchant_user_consume t left join center_pub_merchant_package t1 on  t.package_id = t1.id
+        left join merchant m on t.merchant_id = m.id
+        left join sys_user u on t.user_id = u.id
+          where 1=1
+        <if test="provinceId != null and provinceId !='' " >  
+            and m.provinceId = #{provinceId,jdbcType=INTEGER}
+        </if> 
+        <if test="cityId != null and cityId !='' " >  
+            and m.cityId = #{cityId,jdbcType=INTEGER}
+        </if> 
+        <if test="areaId != null and areaId !='' " >  
+            and m.areaId = #{areaId,jdbcType=INTEGER}
+        </if> 
+        <if test="id != null and id !='' " >  
+            and t.ID = #{id,jdbcType=BIGINT}
+        </if>  
+        <if test="merchantId != null and merchantId !='' " >  
+            and t.MERCHANT_ID = #{merchantId,jdbcType=BIGINT}
+        </if>
+        <if test="userId != null and userId !='' " >  
+            and t.USER_ID = #{userId,jdbcType=BIGINT}
+        </if>  
+        <if test="consumeType != null and consumeType !='' " >  
+            and t.CONSUME_TYPE = #{consumeType,jdbcType=INTEGER}
+        </if>  
+        <if test="orderId != null and orderId !='' " >  
+            and t.ORDER_ID = #{orderId,jdbcType=VARCHAR}
+        </if>
+        <if test="packageId != null and packageId !='' " >  
+            and t.PACKAGE_ID = #{packageId,jdbcType=BIGINT}
+        </if>
+        <if test="createDateStart != null and createDateStart!=''">
+            and t.CREATE_DATE >= #{createDateStart,jdbcType=TIMESTAMP}
+        </if>
+        <if test="createDateEnd != null and createDateEnd!=''">
+        <![CDATA[ 
+            and t.CREATE_DATE <= date_add(#{createDateEnd,jdbcType=TIMESTAMP}, INTERVAL 1 day)
+        ]]>
+        </if>
+         <if test="packageKey != null and packageKey !='' ">
+            and t1.package_key = #{packageKey,jdbcType=INTEGER}
+        </if>
+        <if test="telephone != null and telephone !='' " >  
+            and u.telno = #{telephone,jdbcType=BIGINT}
+        </if>
+    order by t.CREATE_DATE DESC limit #{start}, #{pageSize} 
+  </select>
+  
+   <select id="unionCountByParams" parameterType="java.util.Map" resultType="java.lang.Integer">
+    select count(1) 
+      from center_pub_merchant_user_consume t left join center_pub_merchant_package t1 on  t.package_id = t1.id 
+      left join merchant m on t.merchant_id = m.id
+      left join sys_user u on t.user_id = u.id
+       where 1=1
+        <if test="provinceId != null and provinceId !='' " >  
+            and m.provinceId = #{provinceId,jdbcType=INTEGER}
+        </if> 
+        <if test="cityId != null and cityId !='' " >  
+            and m.cityId = #{cityId,jdbcType=INTEGER}
+        </if> 
+        <if test="areaId != null and areaId !='' " >  
+            and m.areaId = #{areaId,jdbcType=INTEGER}
+        </if> 
+        <if test="id != null and id !='' " >  
+            and t.ID = #{id,jdbcType=BIGINT}
+        </if>  
+        <if test="merchantId != null and merchantId !='' " >  
+            and t.MERCHANT_ID = #{merchantId,jdbcType=BIGINT}
+        </if>
+        <if test="userId != null and userId !='' " >  
+            and t.USER_ID = #{userId,jdbcType=BIGINT}
+        </if>  
+        <if test="consumeType != null and consumeType !='' " >  
+            and t.CONSUME_TYPE = #{consumeType,jdbcType=INTEGER}
+        </if>  
+        <if test="orderId != null and orderId !='' " >  
+            and t.ORDER_ID = #{orderId,jdbcType=VARCHAR}
+        </if>
+        <if test="packageId != null and packageId !='' " >  
+            and t.PACKAGE_ID = #{packageId,jdbcType=BIGINT}
+        </if>
+        <if test="createDateStart != null and createDateStart!=''">
+            and t.CREATE_DATE >= #{createDateStart,jdbcType=TIMESTAMP}
+        </if>
+        <if test="createDateEnd != null and createDateEnd!=''">
+        <![CDATA[ 
+            and t.CREATE_DATE <= date_add(#{createDateEnd,jdbcType=TIMESTAMP}, INTERVAL 1 day)
+        ]]>
+        </if>
+         <if test="packageKey != null and packageKey !='' ">
+            and t1.package_key = #{packageKey,jdbcType=INTEGER}
+        </if>
+   
+  </select>
+   <select id="countByParams" parameterType="java.util.Map" resultType="java.lang.Integer">
+    select count(1) 
+    <include refid="getQuerySQL"></include>
+  </select>
+  <select id="getUserTotalPayment" parameterType="java.util.Map" resultType="java.lang.Double">
+       select sum(PAY_NUM) 
+    <include refid="getQuerySQL"></include>
+  </select>
+  
+</mapper>

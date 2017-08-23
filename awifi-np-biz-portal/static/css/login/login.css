@@ -1,0 +1,209 @@
+html, body, div, ul, ol, p, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+body {
+    background-color: #fff;
+    font-size: 14px;
+    color: #6A6A6A;
+    padding-bottom: 69px;
+}
+h1, h2 {
+    font-size: 100%;
+}
+input:focus {
+    outline: none;
+}
+.clfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.clfix {
+    zoom: 1;
+}
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+header {
+    padding: 25px 0;
+    border-top: 3px solid #3CB099;
+    border-bottom: 1px solid #E9E8E8;
+}
+#logo {
+    margin-left: 100px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #5B5B5B;
+}
+#logo .icon-logo {
+    float: left;
+    display: inline-block;
+    width: 146px;
+    height: 46px;
+    background: url("../../images/admin-login.png") no-repeat 0 -80px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.main {
+    position: relative;
+    height: 531px;
+}
+.main .main-bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 78px;
+    background: url("../../images/admin-login.png") repeat-x 0 0;
+}
+.main .wrap {
+    position: relative;
+    z-index: 10;
+    height: 531px;
+    background: #FAFDFE url("../../images/login-bg.jpg") no-repeat 0 bottom;
+}
+.login-form {
+    float: right;
+    width: 326px;
+    height: 340px;
+    margin-top: 50px;
+    border: 1px solid #3CB099;
+}
+.login-form .form-title {
+    height: 82px;
+    line-height: 82px;
+    background-color: #3CB099;
+    color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+}
+.form-title .icon-user {
+    float: left;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    margin: 10px 10px 0 20px;
+    background: url("../../images/admin-login.png") no-repeat 0 -180px;
+}
+.login-form ul {
+    margin: 20px;
+}
+.login-form li {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.login-form .input {
+    width: 274px;
+    border: 1px solid #ccc;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 5px;
+    font-size: 14px;
+}
+#code {
+    float: left;
+    width: 173px;
+}
+#authCodeImg {
+    float: left;
+    width: 100px;
+    height: 38px;
+}
+#login-btn {
+    display: block;
+    width: 286px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    border: 0 none;
+    background-color: #3CB099;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+#errormsg {
+    text-align: center;
+    font-size: 12px;
+    color: #C00;
+}
+.icon-list {
+    clear: both;
+    width: 990px;
+    margin: 50px auto 0 auto;
+}
+.icon-list li {
+    float: left;
+    width: 330px;
+    font-size: 18px;
+}
+.icon-list .icon-l, .icon-list .icon-m, .icon-list .icon-r {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    background: url("../../images/admin-login.png") no-repeat 0 -130px;
+    vertical-align: middle;
+}
+.icon-list .icon-m {
+    background-position: -50px -130px;
+}
+.icon-list .icon-r {
+    background-position: -100px -130px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding:15px 0;
+    background-color: #F8F8F8;
+}
+/* G20提醒 */
+.gMessage {
+    margin: 5px 20px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+/* 滚动提醒区域 */
+.notice {
+    width: 286px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0 0 18px;
+}
+.notice .icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.notice .icon img {
+    width: 100%;
+    height: 100%;
+}
+.notice .content {
+    float: left;
+    overflow: hidden;
+    width: 256px;
+    font-size: 14px;
+}
+.notice .scroll_div {
+    width:256px;
+    height:30px;
+    margin:0 auto;
+    white-space: nowrap;
+    overflow:hidden;
+}
+.notice .scroll_begin , .notice .scroll_end {
+    display: inline;
+    font-size: 14px;
+    line-height: 30px;
+}

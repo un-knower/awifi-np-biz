@@ -1,0 +1,729 @@
+@charset "utf-8";
+
+._Entity_ {
+    word-break: break-all;
+    word-break: break-word;
+    /*padding: 6px;*/
+    /*position: relative;*/
+}
+
+._Entity_ .index-2-save {
+    width: 100%;
+    padding: 20px 5% 50px 5%;
+}
+._Entity_ .index-2-save .save {
+    background: #2C8EFE;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 105px;
+    padding: 15px 0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/*消息滚动组件*/
+._Entity_ .scorll_bar {
+    background-color: wheat;
+    height: 20px;
+}
+/*._Entity_ .scorll_bar .marquee{*/
+    /*margin: 0 auto;*/
+    /*position: relative;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*animation:horse 5s linear 0s infinite;*/
+    /*-webkit-animation:horse 5s linear 0s infinite;*/
+    /*-moz-animation:horse 5s linear 0s infinite;*/
+    /*-o-animation:horse 5s linear 0s infinite;*/
+    /*color:#333;*/
+    /*font-size: 14px;*/
+    /*padding-top: 2px;*/
+/*}*/
+/*@keyframes horse {*/
+    /*from {left:100%; top: 0px;}*/
+    /*to {left:-200%; top: 0px;}*/
+/*}*/
+/*@-webkit-keyframes horse {*/
+    /*from {left:100%; top: 0px;}*/
+    /*to {left:-200%; top: 0px;}*/
+/*}*/
+/*@-moz-keyframes horse {*/
+    /*from {left:100%; top: 0px;}*/
+    /*to {left:-200%; top: 0px;}*/
+/*}*/
+/*@-o-keyframes horse {*/
+    /*from {left:100%; top: 0px;}*/
+    /*to {left:-200%; top: 0px;}*/
+/*}*/
+
+/*顶部导航栏组件*/
+._Entity_ .nav_bar {
+    height: 40px;
+    background-color: #2C8EFE;
+}
+._Entity_ .nav_bar .left {
+    float: left;
+    width: 20%;
+    height:100%;
+    text-align: left;
+    padding-left: 10px;
+}
+._Entity_ .nav_bar .left img {
+    padding-top: 12px;
+    font-size: 12px;
+    width: 40%;
+
+}
+._Entity_ .nav_bar span {
+    float: left;
+    width: 60%;
+    text-align: center;
+    height: 100%;
+    padding-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+._Entity_ .nav_bar .right {
+    float: left;
+    width: 20%;
+    height:100%;
+    text-align: right;
+    padding-right: 10px;
+}
+._Entity_ .nav_bar .right img {
+    padding-top: 10px;
+    font-size: 12px;
+    width: 30%;
+}
+
+/*底部栏组件*/
+._Entity_ .tab_bar {
+    height: 4rem;
+    /*position: relative;*/
+    width:100%;
+    bottom: 0;
+    background: #ffffff;
+    padding-top: 5px;
+    box-shadow: 0 1px 1px 1px #716F6F;
+
+    width: 100%;
+    margin: 0 auto;
+}
+._Entity_ .tab_bar .tabbar-content {
+    float: left;
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+}
+._Entity_ .tab_bar .tabbar-content .nav-img {
+    height: 2rem;
+}
+
+._Entity_ .tab_bar .tabbar-content .nav-img > img {
+    height: inherit;
+}
+._Entity_ .tab_bar .tabbar-content .nav-title {
+    padding-top: 3px;
+    font-size: 1.3rem;
+}
+
+/*图片轮播组件*/
+._Entity_ .carousel-indicators li {
+    display: inline-block;
+}
+
+/*请求上网组件*/
+._Entity_ .connection {
+    padding-left: 5%;
+    width: 95%;
+    height: 70px;
+    padding-top: 15px;
+}
+._Entity_ .connection .img {
+    float: left;
+    width: 20%;
+}
+._Entity_ .connection .img img {
+    width: 80%;
+}
+._Entity_ .connection .title {
+    float: left;
+    width: 50%;
+}
+._Entity_ .connection .buybtn {
+    float: left;
+    width: 30%;
+    padding-top: 5px;
+}
+._Entity_ .connection .buybtn button {
+    background: #F79647;
+    color: #fff;
+    font-size: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+}
+
+/*园区介绍组件*/
+._Entity_ .note {
+    width: 100%;
+    height: 100px;
+}
+._Entity_ .note .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+._Entity_ .note .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+._Entity_ .note .infotext {
+    width: 100%;
+    height: 80px;
+    padding: 5px 15px 15px 5px;
+    text-align: left;
+    min-height: 60px;
+    margin-bottom: 5px;
+}
+
+/*帮助文档组件*/
+._Entity_ .help {
+    width: 100%;
+    height: 100px;
+}
+._Entity_ .help .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+._Entity_ .help .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+._Entity_ .help .helptext {
+    width: 100%;
+    height: 80px;
+    padding: 5px 15px 15px 5px;
+    text-align: left;
+    min-height: 60px;
+    margin-bottom: 5px;
+}
+
+/*顶部返回组件*/
+._Entity_ .back_bar {
+    height: 40px;
+    background-color: #2C8EFE;
+}
+._Entity_ .back_bar .left {
+    float: left;
+    width: 20%;
+    height:100%;
+    text-align: left;
+    padding-left: 10px;
+}
+._Entity_ .back_bar .left img {
+    padding-top: 10px;
+    font-size: 12px;
+    width: 20%;
+
+}
+._Entity_ .back_bar span {
+    float: left;
+    width: 60%;
+    text-align: center;
+    height: 100%;
+    padding-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+._Entity_ .back_bar .right {
+    width: 20%;
+    height: 100%;
+    color: #fff;
+    font-size: 1.3rem;
+    float: left;
+    text-align: center;
+    padding-top: 12px;
+}
+
+/*配置页面添加广告位组件*/
+._Entity_ .adadd {
+    width: 100%;
+    min-height: 100px;
+}
+._Entity_ .adadd .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+._Entity_ .adadd .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+._Entity_ .adadd .info {
+    float: left;
+    width: 25%;
+    padding-top: 10px;
+}
+._Entity_ .adadd .info .info-input {
+    width: 90%;
+}
+._Entity_ .adadd .info .image {
+    width: 100%;
+    height: 50px;
+}
+
+/*园区介绍添加组件*/
+._Entity_ .noteadd {
+    width: 100%;
+    min-height: 100px
+}
+._Entity_ .noteadd .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+._Entity_ .noteadd .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+._Entity_ .noteadd .info {
+    width: 100%;
+    height: 50px;
+}
+._Entity_ .noteadd .info textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+._Entity_ .noteadd .info .introLimit {
+    padding-right: 1rem;
+    color: #a9a9a9;
+    text-align: right;
+}
+
+/*园区动态添加组件*/
+._Entity_ .dynamicadd {
+    width: 100%;
+    min-height: 150px;
+}
+._Entity_ .dynamicadd .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+._Entity_ .dynamicadd .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+._Entity_ .dynamicadd .info {
+    width: 100%;
+    height: 60px;
+}
+._Entity_ .dynamicadd .info textarea {
+    width: 100%;
+    height: 75%;
+    border: none;
+}
+._Entity_ .dynamicadd .info .activeLimit {
+    padding-right: 1rem;
+    color: #a9a9a9;
+    text-align: right;
+}
+._Entity_ .dynamicadd .edit-add {
+    min-height: 90px;
+    background-color: #F1F1F1;
+    width:100%;
+}
+._Entity_ .dynamicadd .edit-add .edit-inner-div {
+    padding: 20px 0 20px 60%;
+    width: 35%;
+}
+._Entity_ .dynamicadd .edit-add .edit-inner-div .edit-save {
+    background: #fff;
+    border: none;
+    color: #999;
+    font-size: 1.5rem;
+    width: 105px;
+    padding: 15px 0;
+    border-radius: 5px;
+}
+._Entity_ .dynamicadd .activeList .activeList-content {
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+}
+._Entity_ .dynamicadd .activeList .activeList-content .content-title {
+    width: 100%;
+    content: '';
+    display: table;
+    clear: both;
+}
+ ._Entity_ .dynamicadd .activeList .activeList-content .content-title .title-name {
+     width: 30%;
+     float: left;
+ }
+._Entity_ .dynamicadd .activeList .bottomline {
+    width: 100%;
+    border-bottom: 1px dashed #DEDEDE;
+}
+
+/*园区统计金额组件*/
+._Entity_ .statistics-total {
+    width: 100%;
+    min-height: 100px;
+}
+._Entity_ .statistics-total .total {
+    width: 50%;
+    float: left;
+    padding-top: 5px;
+}
+._Entity_ .statistics-total .total .content {
+    margin-top: 5px;
+    font-size: 4rem;
+    width: 90%;
+    text-align: center;
+}
+._Entity_ .statistics-total .total .title {
+    margin-bottom: 5px;
+    width: 90%;
+    text-align: center;
+    font-size: 1.6rem;
+}
+._Entity_ .statistics-total .average {
+    width: 50%;
+    float: left;
+    padding-top: 5px;
+}
+._Entity_ .statistics-total .average .content {
+    margin-top: 5px;
+    font-size: 4rem;
+    width: 90%;
+    text-align: center;
+    border-left: 1px solid #D8D8D8;
+    padding-left: 10px;
+}
+._Entity_ .statistics-total .average .title {
+    margin-bottom: 5px;
+    width: 90%;
+    text-align: center;
+    font-size: 1.6rem;
+    border-left: 1px solid #D8D8D8;
+    padding-left: 13px;
+}
+
+/*用户使用信息组件*/
+._Entity_ .staistitcs-user {
+    width: 100%;
+    min-height: 120px;
+}
+._Entity_ .staistitcs-user .visit {
+    width: 100%;
+    height: 40px;
+}
+._Entity_ .staistitcs-user .visit .title {
+    background: #F1F1F1;
+    color: #666;
+    display: block;
+    height: 10px;
+}
+._Entity_ .staistitcs-user .visit .content {
+     width:100%;
+}
+._Entity_ .staistitcs-user .visit .content .msg {
+    text-align: left;
+    float: left;
+    padding-left: 5px;
+    padding-top: 7px;
+}
+._Entity_ .staistitcs-user .visit .content .total {
+    /* width: 30%; */
+    text-align: right;
+    /* float: left; */
+    padding-right: 5px;
+    padding-top: 7px;
+}
+._Entity_ .staistitcs-user .cutline {
+    border-bottom: 1px dashed #DEDEDE;
+}
+
+/*付费用户明细组件*/
+._Entity_ .statistitcs-deal {
+    width:100%;
+    min-height: 100px;
+}
+._Entity_ .statistitcs-deal .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+
+._Entity_ .statistitcs-deal .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+
+/*企业管理员、园区代付按钮组件*/
+._Entity_ .manage-admin-pay {
+    width:100%;
+    padding-top: 25px;
+    min-height: 200px;
+
+}
+._Entity_ .manage-admin-pay .admin {
+    padding: 1rem 0;
+    min-height: 60px;
+    width: 100%;
+    margin: 0 auto;
+}
+._Entity_ .manage-admin-pay .admin button {
+    color: #2BA2D5;
+    font-size: 1.5rem;
+    background: white;
+    border: 0px;
+}
+
+/*园区代付组件*/
+._Entity_ .payforanohter {
+    width:100%;
+    min-height: 200px;
+    padding-top: 20px;
+}
+._Entity_ .payforanohter .payforanohter-content {
+    height: 40px;
+}
+._Entity_ .payforanohter .payforanohter-content .name {
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    padding-left: 10%;
+}
+._Entity_ .payforanohter .payforanohter-content .merchant {
+    float: left;
+}
+._Entity_ .payforanohter .payforanohter-content input {
+    float: left;
+    font-size: 14px;
+}
+._Entity_ .payforanohter .payforanohter-save {
+    width: 100%;
+    padding: 20px 5% 50px 5%;
+}
+._Entity_ .payforanohter .payforanohter-save .save {
+    background: #2C8EFE;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 105px;
+    padding: 15px 0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/*企业管理员列表组件*/
+._Entity_ .adminlist {
+    width:100%;
+    min-height: 200px;
+}
+._Entity_ .adminlist .adminlist-table {
+    border-bottom: 1px dashed #DEDEDE;
+    padding: 10px 0;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+}
+._Entity_ .adminlist .adminlist-table .table-td {
+    color: black;
+    font-size: 1.5rem;
+    width: 30%;
+    text-align: center;
+}
+
+/*企业管理员新增组件*/
+._Entity_ .adminadd {
+    width:100%;
+    min-height: 200px;
+    padding-top: 20px;
+}
+._Entity_ .adminadd .adminadd-content {
+    margin: 0 auto;
+    width: 90%;
+}
+._Entity_ .adminadd .adminadd-content input {
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border: 1px solid #D4D4D4;
+    width: 100%;
+}
+
+/*登录组件*/
+._Entity_ .login {
+    width: 100%;
+    min-height: 200px;
+    padding-top: 30px;
+}
+._Entity_ .login .login-content {
+    width: 90%;
+    /* padding-left: 10%; */
+    margin: 0 auto;
+    height: 70px;
+
+}
+._Entity_ .login .login-content .login-telephone {
+    padding: 15px 0;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    /*font-size: 1.5rem;*/
+    text-indent: 1em;
+    border: 1px solid #D4D4D4;
+    width: 100%;
+    font: inherit;
+}
+._Entity_ .login .login-content .login-code {
+    padding: 15px 0;
+    /*margin-bottom: 25px;*/
+    border-radius: 5px;
+    /*font-size: 1.5rem;*/
+    text-indent: 1em;
+    border: 1px solid #D4D4D4;
+    width: 47%;
+    margin: 0 auto;
+    font: inherit;
+    float: left;
+}
+
+._Entity_ .login .login-content .login-get-code {
+    background: #ECECEC;
+    /*font-size: 1.5rem;*/
+    width: 47%;
+    margin: 0 auto;
+    float: right;
+    color: #666;
+    border: 1px solid transparent;
+    padding: 15px 0;
+    border-radius: 5px;
+    font: inherit;
+}
+
+/*个人中心组件*/
+._Entity_ .usercenter {
+    width: 100%;
+    min-height: 90px;
+}
+._Entity_ .usercenter .usercenter-edit {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+._Entity_ .usercenter .usercenter-edit .edit-photo {
+    height: 6.666667rem;
+    padding: .833333rem .833333rem .833333rem 0;
+    float: left;
+    width: 30%;
+}
+._Entity_ .usercenter .usercenter-edit .edit-user {
+    width: 60%;
+    float: left;
+    padding-top: 2.333333rem;
+    font-size: 1.6rem;
+    height: 6.666667rem;
+    text-align: left;
+    padding-left: 10px;
+}
+._Entity_ .usercenter .usercenter-edit .edit-enter {
+    padding-top: 2.3rem;
+    float: right;
+    width: 10%;
+}
+
+/*套餐详情组件*/
+._Entity_ .mealdetail {
+    width:100%;
+    min-height: 80px;
+}
+._Entity_ .mealdetail .visit {
+    height: 30px;
+}
+._Entity_ .mealdetail .title {
+    width: 100%;
+    height: 20px;
+    background: #F1F1F1;
+}
+._Entity_ .mealdetail .title span {
+    display: block;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+._Entity_ .mealdetail .visit .content {
+    width:100%;
+}
+._Entity_ .mealdetail .visit .content .msg {
+    text-align: left;
+    float: left;
+    padding-left: 5px;
+    padding-top: 7px;
+}
+._Entity_ .mealdetail .visit .content .total {
+    /* width: 30%; */
+    text-align: left;
+    /* float: left; */
+    padding-right: 5px;
+    padding-top: 7px;
+}
+._Entity_ .mealdetail .cutline {
+    border-bottom: 1px dashed #DEDEDE;
+}
+
+/*帮助中心详情组件*/
+._Entity_ .col-sm-4 {
+    max-height:300px;
+}
+._Entity_ .col-sm-8 {
+    max-height:170px;
+}
+
+
+.fix-bottom{
+    position:fixed;
+    bottom:0px;
+}
+

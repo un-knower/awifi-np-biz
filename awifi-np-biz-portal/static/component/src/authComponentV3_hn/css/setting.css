@@ -1,0 +1,56 @@
+@charset "utf-8";
+#authType .typeArea {
+    height: 20px;
+    margin-top: 10px;
+}
+#authType .authTitle {
+    font-weight: normal;
+    margin-left: 10px;
+}
+#styles .radio-inline div {
+    height: 42px;
+    line-height: 42px;
+    width: 4em;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    margin-right: 1em;
+    /*border-radius: 2px;*/
+    text-align: center;
+}
+#styles .radio-inline div.st1 {
+    background-color: #0d8cdb;
+    color: #fff;
+}
+#styles .radio-inline div.st2 {
+    background-color: #693305;
+    color: #fff;
+}
+#styles .radio-inline div.st3 {
+    background-color: #e8a4a5;
+    color: #fff;
+}
+#styles .radio-inline div.st4 {
+    background-color: #fccf38;
+    color: #fff;
+}
+#styles .radio-inline div.st5 {
+    background-color: #10c35b;
+    color: #fff;
+}
+#styles .radio-inline div.st6 {
+    background-color: #d83433;
+    color: #fff;
+}
+#styles .radio-inline div.st7 {
+    background-color: #e61875;
+    color: #fff;
+}
+#styles .radio-inline div.st8 {
+    background-color: #8e4497;
+    color: #fff;
+}
+#styles .radio-inline div.st9 {
+    background-color: #2abfd4;
+    color: #fff;
+}

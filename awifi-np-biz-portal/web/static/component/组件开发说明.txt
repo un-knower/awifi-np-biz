@@ -1,0 +1,212 @@
+1）请在 static/component/src 下新建目录存在组件内容
+    组件目录结构主要有
+    css
+      |--component.css 组件样式文件
+      |--setting.css  组件配置样式文件
+    script
+      |--Entity.js 组件实体脚本件
+      |--Setting.js  组件实体配置脚本文件
+    image
+      |-- 存放组件引用的图片资源
+
+
+2）组件实体脚本文件
+
+####################
+# script/Entity.js #
+####################
+
+var _Entity_ = function (state, divId) {
+
+    var _state = state || {
+            ### 需求开发内容块start
+            // 实际应用到的state键值对
+            textAlign: 'left',
+            aText: '链接文字',
+            cssHref: 'javascript:;'
+            ### 需求开发内容块end
+        };
+
+    var EntityReact = React.createClass({
+        getInitialState: function () {
+            return _state;
+        },
+
+        render: function () {
+            return (
+                ### 需求开发内容块start
+                // 实际reactjs JSX内容体
+                <div className="textlink" style={{textAlign: this.state.textAlign}}>
+                    <a href={this.state.cssHref} title={this.state.aText}>{this.state.aText}</a>
+                </div>
+                ### 需求开发内容块end
+            );
+        }
+    });
+
+    // OtherReact 在这里定义
+
+    /**
+     * 制作页面时返回React对象
+     * @returns {*}
+     */
+    function render() {
+        ### 需求开发内容块start
+        // 如果更改了 EntityReact 名称请替换
+        return React.render(<EntityReact />, document.getElementById(divId));
+    }
+
+    return {
+        render: render
+    }
+};
+
+
+3）组件实体配置脚本文件
+
+#####################
+# script/Setting.js #
+#####################
+
+var _Setting_ = function (entity, divId) {
+    var setting = null;
+
+    /**
+     * 更新设置组件状态数据
+     * @param state
+     */
+    function setStates(state) {
+        entity.setState(state);
+        setting.setState(state);
+    }
+
+    /**
+     * 声明设置组件
+     */
+    /*
+    var SettingReact = React.createClass({
+
+        getInitialState: function() {
+            return {
+                ### 需求开发内容块start
+                // 组件状态键值对初始化
+                content: entity.state.content,
+                textAlign: entity.state.textAlign,
+                fontSize: entity.state.fontSize,
+                display: entity.state.display
+                ### 需求开发内容块end
+            };
+        },
+
+        ### 需求开发内容块start
+        // 组件配置更改内容时触发事件
+        eventContent: function(event) {
+            var _state = {
+                'content': event.target.value
+            };
+            setStates(_state);
+        },
+
+        eventTextAlign: function (event) {
+            var _state = {
+                'textAlign': event.target.value
+            };
+            setStates(_state);
+        },
+
+        eventFontSize: function (event) {
+            var _state = {
+                'fontSize': event.target.value
+            };
+            setStates(_state);
+        },
+
+        eventDisplay: function (event) {
+            var _state = {
+                'display': event.target.value
+            };
+            setStates(_state);
+        },
+        ### 需求开发内容块end
+
+        render: function() {
+            return (
+                ### 需求开发内容块start
+                // 实际reactjs JSX内容体
+                <div className="container">
+                    <form className="form-horizontal">
+                        <div className="form-group">
+                            <label for="content" className="col-sm-2 control-label">内容：</label>
+                            <div className="col-sm-9">
+                                <textarea className="form-control" rows="3" id="content" placeholder="请输入文本内容" value={this.state.content} onChange={this.eventContent}></textarea>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className="col-sm-2 control-label">对齐样式：</label>
+                            <div className="col-sm-9">
+                                <label className="radio-inline">
+                                    <input type="radio" name="textalign" value="left" checked={this.state.textAlign == 'left'} onChange={this.eventTextAlign} />左对齐
+                                </label>
+                                <label className="radio-inline">
+                                    <input type="radio" name="textalign" value="center" checked={this.state.textAlign == 'center'} onChange={this.eventTextAlign} />居&emsp;中
+                                </label>
+                                <label className="radio-inline">
+                                    <input type="radio" name="textalign" value="right" checked={this.state.textAlign == 'right'} onChange={this.eventTextAlign} />右对齐
+                                </label>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className="col-sm-2 control-label">字体大小：</label>
+                            <div className="col-sm-9">
+                                <label className="radio-inline fnnormal">
+                                    <input type="radio" name="fontsize" value="14" checked={this.state.fontSize == '14'} onChange={this.eventFontSize} />正常
+                                </label>
+                                <label className="radio-inline fnbigger">
+                                    <input type="radio" name="fontsize" value="16" checked={this.state.fontSize == '16'} onChange={this.eventFontSize} />较大
+                                </label>
+                                <label className="radio-inline fnbig">
+                                    <input type="radio" name="fontsize" value="18" checked={this.state.fontSize == '18'} onChange={this.eventFontSize} />大
+                                </label>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className="col-sm-2 control-label">展示样式：</label>
+                            <div className="col-sm-9">
+                                <label className="radio-inline">
+                                    <input type="radio" name="showstyle" value="none" checked={this.state.display == 'none'} onChange={this.eventDisplay} />全部展示
+                                </label>
+                                <label className="radio-inline">
+                                    <input type="radio" name="showstyle" value="block" checked={this.state.display == 'block'} onChange={this.eventDisplay} />缩进展示
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                ### 需求开发内容块end
+            );
+        }
+    });
+     */
+
+    // ### Reactjs 写法
+
+    return {
+        setStates: setStates,
+
+        /**
+         * 返回设置组件对象
+         * @returns {*}
+         */
+        render: function () {
+            console.log('设置组件entity=>', entity);
+
+            ### 需求开发内容块start
+            // 如果更改了 SettingReact 名称请替换
+            setting = React.render(<SettingReact />, document.getElementById(divId));
+            console.log('设置组件setting = React.render => ', setting);
+            return setting;
+        }
+    }
+};
+
+4）请按以上说明进行开发，有问题再沟通，谢谢

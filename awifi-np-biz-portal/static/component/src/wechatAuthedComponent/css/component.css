@@ -1,0 +1,21 @@
+@charset "utf-8";
+._Entity_ {
+    max-width: 320px;
+    margin: 0 auto;
+}
+._Entity_ .weiwangpu_wp {
+    padding:12px 20px;
+}
+._Entity_ .entity_tips {
+    background-color: #C6C6C6;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+}
+._Entity_ #weiwangpu_load {
+    display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.35);
+}
+._Entity_ #weiwangpu_load .loading {
+    position:absolute; left:50%; top:50%; width: 42px; height: 42px; margin:-21px 0 0 -21px;
+    background: url("../image/wechat_loading.gif") no-repeat 0 0;
+}

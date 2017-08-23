@@ -1,0 +1,1 @@
+var _Entity_=function(state,divId){var _state=state||{content:"文本内容",textAlign:"left",fontSize:"14",display:"none"};function render(){return React.render(React.createElement(EntityReact,null),document.getElementById(divId))}return{render:render}};

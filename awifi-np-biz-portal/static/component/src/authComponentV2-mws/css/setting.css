@@ -1,0 +1,118 @@
+@charset "utf-8";
+._Setting_ {
+
+}
+._Setting_ .typeArea {
+    height: 20px;
+    margin-top: 5px;
+}
+._Setting_ .typeArea .autoLogin{
+    margin-left: 12px;
+}
+
+._Setting_ .form-group .authTitle {
+    font-weight: normal;
+    margin-left: 10px;
+}
+._Setting_ .form-group .authTitle0 {
+    font-weight: normal;
+    margin-left: 0px;
+}
+._Setting_ .form-group .authTitle3 {
+    font-weight: normal;
+    margin-left: 3px;
+}
+._Setting_ .form-group .mobileArea{
+    /* height: 54px; */
+    height: 35px;
+    margin-top: 5px;
+}
+._Setting_ .form-group .mobileArea div{
+    margin-left: 14px;
+}
+._Setting_ .authModelConfig {
+    margin-top: 7px;
+}
+._Setting_ .authModelConfig input[type="text"]{
+    height: 20px;
+    display: inline-block;
+    padding: 0px;
+    width: 100px;
+    font-size: 12px;
+}
+._Setting_ .featuresConfig {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+._Setting_ .radio-inline {
+    margin-bottom: 5px;
+}
+._Setting_ .radio-inline div {
+    height: 32px;
+    line-height: 32px;
+    width: 4em;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    margin-right: 1em;
+    /*border-radius: 2px;*/
+    text-align: center;
+}
+._Setting_ .radio-inline div.st1 {
+    background-color: #2e67b6;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st2 {
+    background-color: #693305;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st3 {
+    background-color: #e8a4a5;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st4 {
+    background-color: #fccf38;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st5 {
+    background-color: #10c35b;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st6 {
+    background-color: #ff6f7a;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st7 {
+    background-color: #e61875;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st8 {
+    background-color: #8e4497;
+    color: #fff;
+}
+._Setting_ .radio-inline div.st9 {
+    background-color: #2abfd4;
+    color: #fff;
+}
+._Setting_ .form-save {
+    padding: 4px 20px;
+}
+._Setting_ .form-save .btn-block{
+    width: 100%;
+}
+/** 标题字体颜色 */
+._Setting_ .featuresConfig .title-font-color{
+    margin-left: -9px;
+}
+._Setting_ .featuresConfig .title-font-color div{
+    display: inline-block;
+    margin-left: 9px;
+    height: 17px;
+}
+._Setting_ .featuresConfig .title-font-color input{
+    height: 20px;
+    width: 155px;
+    margin-left: -15px;
+    padding: 0px;
+}

@@ -1,0 +1,11 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+.content {
+    width: 960px;
+    height: 593px;
+    margin: 0 auto;
+    background: url("../images/ie8/navigationBg.jpg") no-repeat;
+    background-size:100% 100%;
+}

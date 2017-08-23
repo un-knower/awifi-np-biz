@@ -1,0 +1,54 @@
+@charset "utf-8";
+._Entity_ {
+    word-break: break-all;
+    word-break: break-word;
+    padding: 6px;
+}
+._Entity_ .textLink {
+    font-size: 16px;
+}
+
+/** 对话框 样式 开始 */
+._Entity_ .dialog{
+    position: fixed;
+    margin-left: -6px;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    top: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+._Entity_ .detail {
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    width: 94%;
+    height: 96%;
+    background-color: #fff;
+    padding-bottom: 47px;
+}
+._Entity_ .detail .detail-title {
+    width: 100%;
+    height: 40px;
+    background: #F5F5F5;
+}
+._Entity_ .detail .detail-title .title-font {
+    float: left;
+    padding-top: 14px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #333;
+    padding-left: 14px;
+}
+._Entity_ .detail .detail-title .closeBtn{
+    position: relative;
+    float: right;
+    height: 34px;
+    width: 34px;
+    margin-top: 13px;
+    cursor: pointer;
+    background: url(../image/dialog_close.png) no-repeat;
+    background-size: 20px 20px;
+}
+/** 对话框 样式 结束 */

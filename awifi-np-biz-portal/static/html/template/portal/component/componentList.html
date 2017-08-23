@@ -1,0 +1,76 @@
+<!--电信侧管理员账号列表页面-->
+<div class="nav-map-wrap">
+    <div class="nav-map">爱WiFi行业客户Portal平台<span class="flag">></span>组件管理<span class="flag">></span>组件列表</div>
+</div>
+<div class="content-fixed">
+    <div class="awifi-padding-left20">
+        <div class="awifi-form-sheet">
+            <label class="form-item-title">组件名称：</label>
+            <div class="form-item-input awifi-Col-2 awifi-margin-right awifi-margin-right">
+                <input class="input-control" placeholder="请输入账号关键字" data-ng-model="keywords">
+            </div>
+            <div class="awifi-left awifi-padding-left" >
+                <button class="form-primary" data-ng-click="list()">
+                    <span>查询</span>
+                </button>
+            </div>
+            <div class="awifi-left awifi-padding-left awifi-padding-top" >
+                <a href="#/component/add" class="btn add-form-primary">
+                    <span>组件注册</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="component-Body">
+    <ul class="list-unstyled cpts clearfix">
+        <li data-ng-repeat="component in components">
+            <div class="cpt">
+                <img class="cpt-thumb" data-ng-src="{{ component.thumb ? component.thumb : 'images/sitepic.png' }}" alt="">
+                <div class="cpt-oper">
+                    <a class="edit" href="#/component/edit?id={{ component.id }}">编辑</a>
+                    <!--  <a class="delete" data-ng-click="delete(component.id)">删除</a> -->
+                </div>
+                <div class="cpt-info">
+                    <div>
+                        <div class="cpt-info-tl">名&emsp;&emsp;称：</div>
+                        <div class="cpt-info-cn" title="{{ component.name }}">{{ component.name }}</div>
+                    </div>
+                    <div>
+                        <div class="cpt-info-tl">组件分类：</div>
+                        <div class="cpt-info-cn" title="{{ component.classifyDsp}}">{{ component.classifyDsp}}</div>
+                    </div>
+                    <div>
+                        <div class="cpt-info-tl">组件类型：</div>
+                        <div class="cpt-info-cn" title="{{ component.typeDsp }}">{{ component.typeDsp }}</div>
+                    </div>
+                    <div>
+                        <div class="cpt-info-tl">版本号：</div>
+                        <div class="cpt-info-cn" title="{{ component.version}}">{{ component.version}}</div>
+                    </div>
+                    <div>
+                        <div class="cpt-info-tl">创建时间：</div>
+                        <div class="cpt-info-cn" title="{{ component.createDate }}">{{ component.createDate }}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div data-ng-if="components.length==0" class="no-records" style="margin-left:20px;">查询完成，没有找到相应的数据</div>
+</div>
+<div class="footer-fixed">
+    <div class="right_footer" data-ng-show="showPageBar">
+        <div class="right_footer_page">
+        </div>
+        <div class="page_num">
+            <ul>
+                <li>每页显示</li>
+                <li><input type="button" value="15" class="show_page" /> </li>
+                <li><input type="button" value="30" class="show_page" /></li>
+                <li><input type="button" value="50" class="show_page" /></li>
+                <li>行</li>
+            </ul>
+        </div>
+        <div class="nothing"></div>
+    </div>
+</div>

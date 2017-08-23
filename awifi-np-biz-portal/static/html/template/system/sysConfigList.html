@@ -1,0 +1,68 @@
+<div class="nav-map-wrap">
+    <div class="nav-map">爱WiFi行业客户Portal平台<span class="flag">></span>日志管理<span class="flag">></span>系统参数配置</div>
+</div>
+<div class="content-fixed">
+    <div class="awifi-padding-left20">
+        <div class="awifi-form-sheet">
+            <label class="form-item-title">名称：</label>
+            <div class="form-item-input awifi-Col-2 awifi-margin-right">
+                <input class="input-control" placeholder="请输入关键字" data-ng-model="keywords">
+            </div>
+            <div class="awifi-left awifi-padding-left" permission="log_manager_sysconfiger_search">
+                <button class="form-primary" data-ng-click="list()">
+                    <span>查询</span>
+                </button>
+            </div>
+            <div class="awifi-left awifi-padding-left awifi-padding-top" permission="log_manager_sysconfiger_add">
+                <a href="#/sysconfig/add" class="btn add-form-primary">
+                    <span>增加参数配置</span>
+                </a>
+            </div>
+        </div>
+        <div class="listtitle">
+            <span class="list4">&emsp;序号</span>
+            <span class="list12">&nbsp;名称</span>
+            <span class="list16">&nbsp;key</span>
+            <span class="list24">&nbsp;value</span>
+            <span class="list10">备注</span>
+            <span class="list6">&nbsp;排序号</span>
+            <span class="list12">&nbsp;配置时间</span>
+            <span class="oper16">&nbsp;操作</span>
+        </div>
+    </div>
+</div>
+<div class="content-one">
+    <div class="datacontent" IE="8">
+        <div class="listcontent" data-ng-repeat="sysconfig in sysconfigs">
+            <span class="list4">&emsp;{{ begin + $index + 1 }}</span>
+            <span class="list12 substring" title="{{ sysconfig.aliasName }}">&nbsp;{{ sysconfig.aliasName }}</span>
+            <span class="list16 substring" title="{{ sysconfig.paramKey }}">&nbsp;{{ sysconfig.paramKey }}</span>
+            <span class="list24 substring" title="{{ sysconfig.paramValue }}">&nbsp;{{ sysconfig.paramValue }}</span>
+            <span class="list10 substring" title="{{ sysconfig.remark }}">&nbsp;{{ sysconfig.remark }}</span>
+            <span class="list6">&nbsp;{{ sysconfig.orderNo }}</span>
+            <span class="list12">&nbsp;{{ sysconfig.updateDatetime }}</span>
+            <span class="oper16">
+                <a href="javascript:void(0);" data-ng-click="show(sysconfig.id)" permission="log_manager_sysconfiger_info">详  情</a>
+                <a href="#/sysconfig/edit?sysconfigId={{ sysconfig.id }}" permission="log_manager_sysconfiger_edit">编   辑</a>
+                <a href="javascript:void(0);" data-ng-click="delete(sysconfig.id)" permission="log_manager_sysconfiger_delete">删  除</a>
+            </span>
+        </div>
+        <div data-ng-if="sysconfigs.length==0" class="no-records">查询完成，没有找到相应的数据</div>
+    </div>
+</div>
+<div class="footer-fixed">
+    <div class="right_footer" data-ng-show="showPageBar">
+        <div class="right_footer_page">
+        </div>
+        <div class="page_num">
+            <ul>
+                <li>每页显示</li>
+                <li><input type="button" value="15" class="show_page" /> </li>
+                <li><input type="button" value="30" class="show_page" /></li>
+                <li><input type="button" value="50" class="show_page" /></li>
+                <li>行</li>
+            </ul>
+        </div>
+        <div class="nothing"></div>
+    </div> 
+</div>

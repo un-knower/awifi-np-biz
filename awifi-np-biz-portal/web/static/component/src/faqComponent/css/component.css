@@ -1,0 +1,71 @@
+._Entity_ {
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+._Entity_ .help {
+    background-color: #C6C6C6;
+    height: 60px;
+    color: white;
+    font-size: 12px;
+    line-height: 60px;
+    text-align: center;
+}
+._Entity_ .tips {
+    position: absolute;
+    bottom: 0;
+    line-height: 24px;
+    z-index: 7000;
+    width: 100%; /*js*/
+    text-align: right;
+}
+._Entity_ .tips .btn {
+    padding: 10px 10px;
+    min-width: 80px;
+    /*float: right;*/
+}
+
+._Entity_ .tipsBody {
+    z-index: 7500;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%; /*js*/
+}
+._Entity_ .tipsBg {
+    z-index: 7000;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #686868;
+    opacity: 0.96;
+}
+._Entity_ .closeBtn {
+    z-index: 7400;
+    position: absolute;
+    right: 0;
+    background-color: #686868;
+    padding: 0 9px 3px 10px;
+    font-size: 22px;
+    color: #fff;
+}
+._Entity_ .closeBtn:hover{
+    background-color: #000;
+    color: #fff;
+}
+._Entity_ .tipsInfo {
+    z-index: 7200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+._Entity_ .tipsInfo div {
+    padding: 30px 10px 10px 10px;
+    line-height: 24px;
+    color: #fff;
+    text-align: left;
+    font-size: 13px;
+    word-wrap: break-word;
+}

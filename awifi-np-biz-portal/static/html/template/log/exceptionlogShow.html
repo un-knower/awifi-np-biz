@@ -1,0 +1,43 @@
+<div class="right_top_dsp">&emsp;异常日志</div>
+<div class="right_below" >
+    <div style="height:40px;line-height:40px;">
+        <ul>
+            <li class="li" style="">错误代码：</li>
+            <li style="width: 700px;">{{ exceptionlog.errorCode }}</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li class="li">模块名称：</li>
+            <li style="width: 700px;">{{ exceptionlog.moduleName }}</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li class="li">创建时间：</li>
+            <li style="width: 700px;">{{ exceptionlog.createDatetime |date:"yyyy-MM-dd hh:mm:ss" }}</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li class="li">服务名称：</li>
+            <li style="width: 700px;">{{ exceptionlog.serviceName }}</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li class="li">异常参数：</li>
+            <li style="width: 700px;word-wrap:break-word; word-break:break-all;padding-bottom: 10px;">
+                {{ exceptionlog.parameter }}
+            </li>
+        </ul>
+    </div>
+    <div style="height:350px; overflow:hidden;">
+        <ul>
+            <li class="li">错误消息：</li>
+            <li style="word-wrap:break-word; word-break:break-all; ">
+                <textarea style="width: 700px;height: 305px;resize:none;">{{ exceptionlog.errorMessage}}</textarea>
+            </li>
+        </ul>
+    </div>
+</div>

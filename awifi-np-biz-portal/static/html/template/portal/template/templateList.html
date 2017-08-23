@@ -1,0 +1,79 @@
+<div class="nav-map-wrap">
+    <div class="nav-map">爱WiFi行业客户Portal平台<span class="flag">></span>模板管理<span class="flag">></span>模板列表</div>
+</div>
+<div class="content-fixed">
+    <div class="awifi-padding-left20">
+        <div class="awifi-form-sheet">
+            <label class="form-item-title">项目：</label>
+            <div class="form-item-select awifi-Col-1 awifi-margin-right">
+                <select id="projectName" name="trade1" style="width: 100%" data-ng-model="projectId">
+                </select>
+            </div>
+            <label class="form-item-title">行业：</label>
+            <div class="form-item-select awifi-Col-1 awifi-margin-right">
+                <select style="width: 100%" data-ng-change="change($event)" data-ng-model="parentIndustryId"  data-ng-options="i.industryId as i.industryName for i in industry1s">
+                    <option value="">一级行业</option>
+                </select>
+            </div>
+            <div class="form-item-select awifi-Col-1 awifi-margin-right">
+                <select style="width: 100%"  data-ng-model="childIndustryId" data-ng-options="o.industryId as o.industryName for o in industry2s">
+                    <option value="">二级行业</option>
+                </select>
+            </div>
+            <label class="form-item-title">模板名称：</label>
+            <div class="form-item-input awifi-Col-2 awifi-margin-right awifi-margin-right">
+                <input class="input-control" placeholder="请输入模板名称关键字" data-ng-model="keywords">
+            </div>
+            <div class="awifi-left awifi-padding-left" >
+                <button class="form-primary" data-ng-click="list()">
+                    <span>查询</span>
+                </button>
+            </div>
+            <div class="awifi-left awifi-padding-left awifi-padding-top" >
+                <a href="/template/addpage" target="_blank" class="btn add-form-primary">
+                    <span>添加模板</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Container-Body">
+    <div class="content-two">
+        <ul class="templateList" data-ng-repeat="template in templates">
+            <li>
+                <div class="oneTemplate">
+                    <img data-ng-src="{{ template.thumb ? template.thumb : 'images/noThumb.png' }}" alt="">
+                    <div class="templateInfo">
+                        <div class="nameandowner"><span class="templateName subString" title="{{ template.templateName }}">{{ template.templateName }}</span></div>
+                        <div class="industryInfo"><span class="addtime">{{ template.secondaryIndustryName }}</span></div>
+                        <div class="timeInfo"><span class="addtime">{{ template.createDate }}</span></div>
+                        <div class="optlink">
+                            <a class="edit" title="编辑" href="/template/addpage?templateId={{ template.id }}" target="_blank"></a>
+                            <a class="delete" title="删除" data-ng-click="delete(template.id)" ></a>
+                            <a class="view" title="预览" href="/template/forward?templateId={{ template.id }}" target="_blank"></a>
+                            <a href="javascript:;" data-ng-click="templateSync(template.id)" class="Sync" title="同步应用此模板的站点"></a>
+                            <a class="copy" title="复制" data-ng-click="copyTemplate(template.id)"></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div data-ng-if="templates.length==0" class="no-records" style="margin-top:20px;margin-left:20px;">查询完成，没有找到相应的数据</div>
+    </div>
+</div>
+<div class="footer-fixed">
+    <div class="right_footer" data-ng-show="showPageBar">
+        <div class="right_footer_page">
+        </div>
+        <div class="page_num">
+            <ul>
+                <li>每页显示</li>
+                <li><input type="button" value="15" class="show_page" /> </li>
+                <li><input type="button" value="30" class="show_page" /></li>
+                <li><input type="button" value="50" class="show_page" /></li>
+                <li>行</li>
+            </ul>
+        </div>
+        <div class="nothing"></div>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+/*单图组件 Setting CSS*/
+@charset "utf-8";
+.warp-title {
+    height: 36px;
+    line-height: 36px;
+    border-bottom: solid 1px #DFDFDF;
+    font-weight: 700;
+    color: #A4A9AE;
+    margin-bottom: 8px;
+}
+.warp-border {
+    border: 1px solid transparent;
+    margin-bottom: 12px;
+}
+.txr {
+    text-align: right;
+}
+.txc {
+    text-align: center;
+}
+.photos {
+    display: block;
+    overflow: hidden;
+}
+.photos .photo {
+    position: relative;
+    padding: 6px 0;
+    border: 1px solid transparent;
+    overflow: hidden;
+}
+.photos .photo .del {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 18px;
+    height: 18px;
+    z-index: 2;
+    background-image: url(../image/del.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.photos .photo:hover {
+    border-color: #F55C45;
+    border-style: dashed;
+}
+.photos .photo:hover .del {
+    display: block;
+}
+.photos .photo .pre {
+    float: left;
+    width: 35%;
+    height: 58px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.photos .photo .pre .pre-add {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/add-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.photos .photo .pre .pre-saved {
+    display: none;
+}
+.photos .photo .pre img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+.photos .photo .cfg {
+    float: left;
+    width: 65%;
+    height: 25px;
+    padding-left: 10px;
+}
+.photos .photo .cfg-fr {
+    margin-bottom: 7px;
+}
+.photos .photo .cfg input {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 0 8px;
+}
+.ipt_text {
+    width: 65%;
+    height: 25px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 0 8px;
+}
+select {
+    width: 30%;
+    height: 30px;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    padding: 0 6px;
+}
+.item {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px 0 0;
+}
+#save {
+    width: 50%;
+}
+.hastitle {
+    padding-left: 20px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+.hastitle input {
+    margin-top: 1px;
+    line-height: normal;
+    position: absolute;
+    margin-left: -20px;
+}
+.color {
+    padding-left: 20px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+.color input {
+    margin-top: 1px;
+    line-height: normal;
+    position: absolute;
+    margin-left: -20px;
+}
+.aligntitle {
+    padding-left: 20px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+.aligntitle input {
+    margin-top: 1px;
+    line-height: normal;
+    position: absolute;
+    margin-left: -20px;
+}
+.img_ext {
+    padding: 5px;
+    color: #888;
+}
+.radio-inline2 {
+    margin-right: 20px;
+}
+.radio-inline2 input {
+    vertical-align: middle;
+    margin-right: 3px;
+}

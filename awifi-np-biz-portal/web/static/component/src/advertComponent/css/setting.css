@@ -1,0 +1,9 @@
+/*广告组件 Setting CSS*/
+@charset "utf-8";
+.areaTop {
+    width: 100%;
+    height: 20px;
+}
+.displaySpan {
+    display: none;
+}

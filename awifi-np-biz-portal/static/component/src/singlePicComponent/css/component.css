@@ -1,0 +1,8 @@
+/*单图组件 Entity CSS*/
+@charset "utf-8";
+._Entity_ {
+    width: 100%;
+}
+._Entity_ img{
+    width: 100%;
+}

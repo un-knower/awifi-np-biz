@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.awifi.np.biz.timebuysrv.web.module.time.dao.UserCutoffDateDao" >
+  <resultMap id="BaseResultMap" type="com.awifi.np.biz.timebuysrv.web.module.time.model.UserCutoff" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="merchant_id" property="merchantId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="cutoff_date" property="cutoffDate" jdbcType="TIMESTAMP" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, merchant_id, user_id, cutoff_date, remarks
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from center_pub_merchant_user_cutoff_date
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from center_pub_merchant_user_cutoff_date
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.awifi.np.biz.timebuysrv.web.module.time.model.UserCutoff" >
+    insert into center_pub_merchant_user_cutoff_date (id, merchant_id, user_id, 
+      cutoff_date, remarks)
+    values (#{id,jdbcType=BIGINT}, #{merchantId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+      #{cutoffDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.awifi.np.biz.timebuysrv.web.module.time.model.UserCutoff" >
+    insert into center_pub_merchant_user_cutoff_date
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="merchantId != null" >
+        merchant_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="cutoffDate != null" >
+        cutoff_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="merchantId != null" >
+        #{merchantId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="cutoffDate != null" >
+        #{cutoffDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.awifi.np.biz.timebuysrv.web.module.time.model.UserCutoff" >
+    update center_pub_merchant_user_cutoff_date
+    <set >
+      <if test="merchantId != null" >
+        merchant_id = #{merchantId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="cutoffDate != null" >
+        cutoff_date = #{cutoffDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+ 
+  <update id="updateByPrimaryKey" parameterType="com.awifi.np.biz.timebuysrv.web.module.time.model.UserCutoff" >
+    update center_pub_merchant_user_cutoff_date
+    set merchant_id = #{merchantId,jdbcType=BIGINT},
+      user_id = #{userId,jdbcType=BIGINT},
+      cutoff_date = #{cutoffDate,jdbcType=TIMESTAMP},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  
+   <select id="selectByMap" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from center_pub_merchant_user_cutoff_date
+    where  1=1 
+   	  <if test="merchantId != null" >
+      	and merchant_id = #{merchantId,jdbcType=BIGINT}
+      </if>
+      <if test="userId != null" >
+        and user_id = #{userId,jdbcType=BIGINT}
+      </if>
+      <if test="cutoffDate != null" >
+        and cutoff_date = #{cutoffDate,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remarks != null" >
+        and remarks = #{remarks,jdbcType=VARCHAR}
+      </if>
+  </select>
+  
+  <select id="queryCountByParam"  parameterType="map" resultType="java.lang.Integer">
+    select count(*)
+    from center_pub_merchant_user_cutoff_date
+    where  1=1 
+   	  <if test="merchantId != null" >
+      	and merchant_id = #{merchantId,jdbcType=BIGINT}
+      </if>
+      <if test="userId != null" >
+        and user_id = #{userId,jdbcType=BIGINT}
+      </if>
+  </select>
+  
+</mapper>

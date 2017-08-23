@@ -1,0 +1,233 @@
+/**
+ * Created by zry on 15/8/21.
+ */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 960px;
+    height: 593px;
+    margin: 0 auto;
+    background: url("../images/ie8/down.jpg") no-repeat;
+    background-size:100% 100%;
+}
+.container .statement {
+    position: absolute;
+    z-index:5555;
+    padding: 20px 20px 0 30px;
+    display: none;
+    margin-top: -510px;
+    _margin-left: -370px;
+    width: 910px;
+    height: 430px;
+    font-size: 14px;
+    background: #ffffff;
+}
+.container .statement span {
+    display: block;
+    font-size: 22px;
+    text-align: center;
+}
+.container .info, .container .info-detail {
+    display: block;
+    padding-left: 230px;
+    color: #23527c;
+}
+.container .info {
+    padding-top: 8px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 20px;
+}
+.container .info-detail {
+    font-size: 16px;
+    height: 22px;
+    line-height: 22px;
+}
+
+.container .mob, .container .code {
+    width: 320px;
+    height: 43px;
+    background-size:100% 100%;
+}
+.container .mob {
+    margin: 0 auto 0 auto;
+    background: url("../images/ie8/kuang02.jpg") no-repeat;
+}
+.container .code {
+    margin: 20px auto 0 auto;
+    background: url("../images/ie8/kuang01.jpg") no-repeat;
+}
+
+.container .mob input, .container .code input {
+    color: #9d9d9d;
+}
+.container .mob input.active, .container .code input.active {
+    color: #000000;
+}
+
+.mob input, .code input {
+    margin: 2px 0 2px 5px;
+    padding-left: 8px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 15px;
+    border: none;
+    border:0;
+    outline: medium;
+}
+.mob input {
+    width: 300px;
+}
+.code input {
+    width: 200px;
+    display: block;
+    float: left;
+}
+.code a {
+    display: block;
+    float: right;
+    height: 43px;
+    line-height: 43px;
+    padding: 0 7px;
+    font-size: 13px;
+    color: #0d8cdb;
+    text-decoration: none;
+}
+.code a.inactive {
+    color: #a2a2a2;
+}
+
+.container .fill {
+    height: 270px;
+}
+.container .agreement {
+    margin: 20px auto 0 auto;
+    width: 320px;
+    /*height: 43px;*/
+    font-size: 13px;
+    text-decoration: none;
+}
+.container .agreement a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container .commit {
+    margin: 20px auto 0 auto;
+    width: 320px;
+    height: 43px;
+}
+.container.authed .commit {
+    margin: -115px auto 0 auto;
+}
+.container .commit input {
+    display: block;
+    width: 320px;
+    height: 43px;
+    line-height: 43px;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #008ade;
+    border: 0;
+}
+.container .commit input:hover {
+    background-color: #0680cc;
+}
+
+.container .commit .disabled {
+    background-color: #686868;
+}
+.container .commit .disabled:hover {
+    background-color: #686868;
+}
+.container .fill, .container .commit input , .container .commit div{ /* display: none; */}
+.container .mob, .container .code, .container .commit .auth { display: block; }
+
+.authed .fill, .authed .commit input { display: block; }
+.authed .mob, .authed .code, .authed .commit .auth { display: none; }
+
+
+
+/*new*/
+.container .content {
+    margin: 140px auto 0 auto;
+    /*width: 230px;*/
+}
+.container .language {
+    margin-top: 10px;
+    margin-left: 570px;
+    margin-right: 320px;
+    height: 30px;
+
+    /*background: url("en.gif") no-repeat;*/
+}
+.container .cnBg {
+    background: url("../images/ie8/cn.gif") no-repeat;
+}
+.container .cnBg .cn {
+    color: #fff;
+}
+.container .enBg {
+    background: url("../images/ie8/en.gif") no-repeat;
+}
+.container .enBg .en {
+    color: #fff;
+}
+.container .language div {
+    float: left;
+    height: 30px;
+    width: 35px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+.navs {
+    list-style: none;
+    padding: 0;;
+    height: 40px;
+    border-bottom: 2px solid #dddddd;
+    margin-top: -45px;
+    margin-left: 320px;
+    margin-right: 320px;
+}
+.navs li {
+    float: left;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    /*background-color: #e1e5e6;*/
+    text-align: center;
+    cursor: pointer;
+    color: #999999;
+}
+.navs li.active {
+    color: #0da3ff;
+    /*background-color: #a6b2b5;*/
+    border-bottom: 2px solid #0da3ff;
+}
+.nav-panel {
+    padding: 10px 0 0 0;
+    display: none;
+    min-height: 169px;
+}
+
+.container .commit .changeToAuth {
+    color: #fff;
+    text-align: right;
+    font-size: 12px;
+    line-height: 30px;
+    width: 60px;
+    height: 30px;
+    margin-left: 260px;
+}
+
+.hide {
+    display: none;
+}

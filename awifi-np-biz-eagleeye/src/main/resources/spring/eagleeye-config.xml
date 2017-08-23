@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="braveDubboSpringContext" class="com.awifi.core.pre.eagleeye.client.config.dubbo.spring.BraveDubboSpringContext" />
+	
+	<bean id="kafkaSender" class="com.awifi.core.pre.eagleeye.client.config.brave.BraveKafkaSenderFactoryBean">
+		<property name="bootstrapServers" value="192.168.212.65:9092" />
+    </bean>
+	
+	<bean id="asyncReporter" class="com.awifi.core.pre.eagleeye.client.config.brave.BraveAsyncReporterFactoryBean">
+        <property name="sender" ref="kafkaSender"/>
+    </bean>
+	
+	<bean id="kafkaBrave" class="com.awifi.core.pre.eagleeye.client.config.brave.BraveFactoryBean">
+        <property name="serviceName" value="eagleeyesrv" />
+        <property name="rate" value="1" /><!--采样率，0或者1（也可以是0-1之间的浮点数，0表示不采集，1表示全部采集）-->
+        <property name="reporter" ref="asyncReporter"/>
+    </bean>
+    
+    <bean id="braveServletFilter" class="com.awifi.core.pre.eagleeye.client.config.brave.BraveServletFilterFactoryBean">
+        <property name="brave" ref="kafkaBrave"/>
+    </bean>
+    
+    <bean id="okHttp" class="com.awifi.core.pre.eagleeye.client.config.brave.HttpClientFactoryBean">
+        <property name="brave" ref="kafkaBrave"/>
+    </bean>
+    
+    <!--<bean class="com.github.kristofa.brave.mysql.MySQLStatementInterceptorManagementBean" destroy-method="close">
+	  <constructor-arg value="#{kafkaBrave.clientTracer()}"/>
+	</bean>-->
+	
+	<bean id="httpClient" class="com.awifi.core.pre.eagleeye.client.http.HttpClientUtil">
+        <property name="okHttp" ref="okHttp"/>
+    </bean>
+
+</beans>

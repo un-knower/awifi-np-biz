@@ -1,0 +1,72 @@
+<div class="nav-map-wrap">
+    <div class="nav-map">爱WiFi行业客户Portal平台<span class="flag">></span>模板管理<span class="flag">></span>添加模板</div>
+</div>
+<div class="content">
+    <form id="componentForm" method="post" enctype="multipart/form-data">
+    <div class="account-add-body awifi-free-width">
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">模板名称：</label>
+            <div class="form-item-input awifi-Col-6">
+                <input type="text" id="templateName" name="name" class="input-control inputw490" placeholder="请输入模板名称" data-ng-model="template.name">
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">选择行业：</label>
+            <div class="form-item-select awifi-Col-6">
+                <select style="width: 100%" data-ng-change="change($event)" data-ng-model="parentIndustryId" data-ng-options="i.industryId as i.industryName for i in industry1s">
+                    <option value="">一级行业</option>
+                </select>
+                <select style="width: 100%"  data-ng-model="childIndustryId" data-ng-options="o.industryId as o.industryName for o in industry2s">
+                    <option value="">二级行业</option>
+                </select>
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">组件版本：</label>
+            <div class="form-item-input awifi-Col-6">
+                <input type="text" id="version" name="version" class="input-control inputw490" placeholder="请输入组件版本号" data-ng-model="component.version">
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">组件压缩包：</label>
+            <div class="form-item-input awifi-Col-6" style="height:50px;color:#737373">
+                <input type="file" id="componentPath" name="componentZip" class="input-control inputw490" placeholder="请上传组件压缩包"><br/>
+                <labe>文件说明：格式为zip</labe>
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">组件图标：</label>
+            <div class="form-item-input awifi-Col-6" style="height:50px;color:#737373">
+                <input type="file" id="iconPath" name="iconPic" class="input-control inputw490" placeholder="请上传组件图标"><br/>
+                <labe>图标说明：尺寸规格30*30像素，文件大小小于50k，格式为png</labe>
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">组件缩略图：</label>
+            <div class="form-item-input awifi-Col-6" style="height:50px;color:#737373">
+                <input type="file" id="thumb" name="thumbPic" class="input-control inputw490" placeholder="请上传组件图标"><br/>
+                <labe>缩略图说明：尺寸规格：宽至少320像素以上，图片文件大小请控制在100k以内</labe>
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">模板备注：</label>
+            <div class="form-item-textarea awifi-Col-6">
+                <textarea id="remark" name="remark" rows="5" placeholder="请输入组件描述" class="textareaw490" maxlength="100" id="remark" data-ng-model="component.remark"></textarea>
+            </div>
+        </div>
+        <div class="awifi-form-sheet">
+            <label class="form-item-title awifi-Col-3">&nbsp;</label>
+            <div class="awifi-left awifi-padding-left">
+                <button class="form-primary awifi-left" type="button" data-ng-click="add()">
+                    <span>&nbsp;保&emsp;存&nbsp;</span>
+                </button>
+            </div>
+            <div class="awifi-left awifi-padding-left awifi-padding-top">
+                <a href="#/component/list" class="btn back-form-primary">
+                    <span>&nbsp;返&emsp;回&nbsp;</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

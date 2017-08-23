@@ -1,0 +1,29 @@
+@charset "utf-8";
+._Setting_ {
+
+}
+
+._Setting_ .openLanguageDiv{
+    margin-left: -20px;
+}
+._Setting_ .openLanguageLabel{
+    color: #313131;
+    font-weight: normal;
+    font-size: 12px;
+}
+._Setting_ .form-group {
+    margin-bottom: 8px;
+}
+._Setting_ .control-label {
+    width: 80px;
+    vertical-align: top;
+}
+._Setting_ .inline-block {
+    display: inline-block;
+}
+._Setting_ .form-save {
+    padding: 10px 20px;
+}
+._Setting_ .hide {
+    display: none;
+}
